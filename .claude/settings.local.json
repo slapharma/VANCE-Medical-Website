@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p app components/sections components/ui public lib)",
+      "Read(//c/c/Users/clift/.Claude/**)"
+    ]
+  }
+}
