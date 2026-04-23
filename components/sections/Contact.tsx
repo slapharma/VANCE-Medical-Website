@@ -28,7 +28,7 @@ export function Contact() {
           </p>
         </Reveal>
 
-        <Reveal delay={140} className="card-lift rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 backdrop-blur">
+        <Reveal delay={140} className="card-lift  bg-white/5 p-8 ring-1 ring-white/10 backdrop-blur">
           <dl className="space-y-6">
             <Row label="General enquiries">
               <a

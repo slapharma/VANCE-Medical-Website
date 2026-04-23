@@ -57,7 +57,7 @@ export function Products() {
             <Reveal
               key={p.name}
               delay={i * 140}
-              className="card-lift flex flex-col rounded-3xl bg-white p-8 shadow-card ring-1 ring-teal-300"
+              className="card-lift flex flex-col  bg-white p-8 shadow-card ring-1 ring-teal-300"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
@@ -74,7 +74,7 @@ export function Products() {
                   <li key={b} className="flex items-start gap-3 text-sm text-teal-900/80">
                     <span
                       aria-hidden
-                      className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700"
+                      className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0  bg-teal-700"
                     />
                     {b}
                   </li>
@@ -104,7 +104,7 @@ function Badge({ status }: { status: Product["status"] }) {
       : "bg-white text-teal-700 ring-1 ring-teal-700";
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider ${styles}`}
+      className={`inline-flex items-center  px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider ${styles}`}
     >
       {status}
     </span>

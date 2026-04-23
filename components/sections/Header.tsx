@@ -27,7 +27,7 @@ export function Header() {
             <li>
               <a
                 href="#contact"
-                className="inline-flex items-center rounded-full bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 transition-colors"
+                className="inline-flex items-center  bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 transition-colors"
               >
                 Healthcare professionals
               </a>

@@ -47,7 +47,7 @@ export function GastroHealthHub() {
               href="https://www.gastrohealthhub.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center rounded-full bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
+              className="inline-flex items-center  bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
             >
               Visit GastroHealthHub.com
               <span aria-hidden className="ml-2">→</span>
@@ -57,20 +57,20 @@ export function GastroHealthHub() {
 
         <Reveal delay={150} className="md:col-span-6">
           <div className="relative">
-            <div className="card-lift relative rounded-3xl bg-gradient-to-br from-teal-100 to-teal-300 p-8 shadow-card ring-1 ring-teal-300">
-              <div className="rounded-2xl bg-white p-6 ring-1 ring-teal-100">
+            <div className="card-lift relative  bg-gradient-to-br from-teal-100 to-teal-300 p-8 shadow-card ring-1 ring-teal-300">
+              <div className=" bg-white p-6 ring-1 ring-teal-100">
                 <div className="flex items-center justify-between border-b border-teal-100 pb-4">
                   <div className="flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-teal-300" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-teal-500" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-teal-700" />
+                    <span className="h-2.5 w-2.5  bg-teal-300" />
+                    <span className="h-2.5 w-2.5  bg-teal-500" />
+                    <span className="h-2.5 w-2.5  bg-teal-700" />
                   </div>
                   <span className="text-xs font-semibold text-teal-700">
                     gastrohealthhub.com
                   </span>
                 </div>
                 <div className="mt-6 space-y-4">
-                  <div className="flex items-center gap-3 rounded-xl bg-teal-50 p-3">
+                  <div className="flex items-center gap-3  bg-teal-50 p-3">
                     <Dot />
                     <div>
                       <p className="text-sm font-semibold text-teal-900">
@@ -79,7 +79,7 @@ export function GastroHealthHub() {
                       <p className="text-xs text-teal-900/60">Patient guide · 6 min read</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 rounded-xl bg-teal-50 p-3">
+                  <div className="flex items-center gap-3  bg-teal-50 p-3">
                     <Dot />
                     <div>
                       <p className="text-sm font-semibold text-teal-900">
@@ -88,7 +88,7 @@ export function GastroHealthHub() {
                       <p className="text-xs text-teal-900/60">HCP resource · Evidence review</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 rounded-xl bg-teal-50 p-3">
+                  <div className="flex items-center gap-3  bg-teal-50 p-3">
                     <Dot />
                     <div>
                       <p className="text-sm font-semibold text-teal-900">
@@ -100,8 +100,8 @@ export function GastroHealthHub() {
                 </div>
               </div>
             </div>
-            <div aria-hidden className="animate-float-slow absolute -right-6 -top-6 h-24 w-24 rounded-full bg-teal-500/50 blur-2xl" />
-            <div aria-hidden className="animate-float-slow absolute -bottom-8 -left-6 h-32 w-32 rounded-full bg-teal-300 blur-3xl" style={{ animationDelay: "1.5s" }} />
+            <div aria-hidden className="animate-float-slow absolute -right-6 -top-6 h-24 w-24  bg-teal-500/50 blur-2xl" />
+            <div aria-hidden className="animate-float-slow absolute -bottom-8 -left-6 h-32 w-32  bg-teal-300 blur-3xl" style={{ animationDelay: "1.5s" }} />
           </div>
         </Reveal>
       </div>
@@ -114,7 +114,7 @@ function Item({ children }: { children: React.ReactNode }) {
     <li className="flex items-start gap-3 text-base text-teal-900/85">
       <span
         aria-hidden
-        className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700"
+        className="mt-2 inline-block h-1.5 w-1.5 shrink-0  bg-teal-700"
       />
       {children}
     </li>
@@ -125,9 +125,9 @@ function Dot() {
   return (
     <span
       aria-hidden
-      className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-700 text-white"
+      className="inline-flex h-8 w-8 shrink-0 items-center justify-center  bg-teal-700 text-white"
     >
-      <span className="h-2 w-2 rounded-full bg-white" />
+      <span className="h-2 w-2  bg-white" />
     </span>
   );
 }

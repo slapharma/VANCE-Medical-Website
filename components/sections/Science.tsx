@@ -36,7 +36,7 @@ export function Science() {
             <Reveal
               key={p.title}
               delay={i * 120}
-              className="card-lift rounded-3xl bg-teal-50 p-8 ring-1 ring-teal-100"
+              className="card-lift  bg-teal-50 p-8 ring-1 ring-teal-100"
             >
               <h3 className="text-lg font-semibold text-teal-900">{p.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-teal-900/80">{p.body}</p>
