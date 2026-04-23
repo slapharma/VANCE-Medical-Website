@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --teal-900: #004d4d;
+  --teal-700: #008080;
+  --teal-500: #78bfbf;
+  --teal-300: #aedbdb;
+  --teal-100: #def4f4;
+  --teal-50: #f4ffff;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  color: var(--teal-900);
+  background: var(--teal-50);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container-x { max-width: 1200px; margin: 0 auto; padding-left: 1.25rem; padding-right: 1.25rem; }
+
+@media (min-width: 768px) {
+  .container-x { padding-left: 2rem; padding-right: 2rem; }
+}
