@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative h-[86vh] min-h-[600px] max-h-[840px] w-full overflow-hidden"
+      className="relative h-[72vh] min-h-[520px] max-h-[760px] w-full overflow-hidden"
     >
       <Image
         src="/hero-gi.jpg"
