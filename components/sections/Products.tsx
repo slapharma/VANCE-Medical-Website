@@ -1,7 +1,7 @@
 type Product = {
   name: string;
   tag: string;
-  status: "Available" | "In development";
+  status: "Coming soon" | "In development";
   summary: string;
   bullets: string[];
 };
@@ -10,9 +10,9 @@ const products: Product[] = [
   {
     name: "EPAVANCE",
     tag: "Omega-3 (EPA) medical food",
-    status: "Available",
+    status: "Coming soon",
     summary:
-      "A medical food providing a clinically relevant dose of highly purified eicosapentaenoic acid (EPA), intended for the dietary management of specific gastrointestinal conditions under medical supervision.",
+      "A medical food providing a clinically relevant dose of highly purified eicosapentaenoic acid (EPA), for the dietary management of specific gastrointestinal conditions under medical supervision.",
     bullets: [
       "Highly purified EPA formulation",
       "Designed for daily, long-term use",
@@ -96,7 +96,7 @@ export function Products() {
 
 function Badge({ status }: { status: Product["status"] }) {
   const styles =
-    status === "Available"
+    status === "Coming soon"
       ? "bg-teal-700 text-white"
       : "bg-white text-teal-700 ring-1 ring-teal-700";
   return (

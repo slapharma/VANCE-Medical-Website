@@ -4,6 +4,7 @@ const nav = [
   { href: "#about", label: "About" },
   { href: "#products", label: "Products" },
   { href: "#science", label: "Science" },
+  { href: "#gastrohealthhub", label: "GastroHealthHub" },
   { href: "#contact", label: "Contact" },
 ];
 
