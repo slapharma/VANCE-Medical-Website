@@ -9,7 +9,7 @@ export function Footer() {
         </div>
         <div className="text-xs text-teal-900/70">
           <p>
-            © {new Date().getFullYear()} Vance Medical Ltd. All rights reserved.
+            © {new Date().getFullYear()} Vance Medical Foods Ltd. All rights reserved.
           </p>
           <p className="mt-1 max-w-2xl">
             Products described on this website are medical foods (Foods for

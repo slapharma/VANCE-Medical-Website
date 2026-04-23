@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/ui/Reveal";
+
 type Product = {
   name: string;
   tag: string;
@@ -37,7 +39,7 @@ export function Products() {
   return (
     <section id="products" className="bg-teal-100 py-20 md:py-28">
       <div className="container-x">
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
             Products
           </p>
@@ -48,13 +50,14 @@ export function Products() {
             Our portfolio brings together established nutritional science and a
             growing pipeline of targeted medical foods.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {products.map((p) => (
-            <article
+          {products.map((p, i) => (
+            <Reveal
               key={p.name}
-              className="flex flex-col rounded-3xl bg-white p-8 shadow-card ring-1 ring-teal-300"
+              delay={i * 140}
+              className="card-lift flex flex-col rounded-3xl bg-white p-8 shadow-card ring-1 ring-teal-300"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
@@ -77,16 +80,16 @@ export function Products() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-6 border-t border-teal-100">
+              <div className="mt-8 border-t border-teal-100 pt-6">
                 <a
                   href="#contact"
-                  className="inline-flex items-center text-sm font-semibold text-teal-700 hover:text-teal-900"
+                  className="inline-flex items-center text-sm font-semibold text-teal-700 transition-colors hover:text-teal-900"
                 >
                   Request clinical information
-                  <span aria-hidden className="ml-1">→</span>
+                  <span aria-hidden className="ml-1 transition-transform group-hover:translate-x-1">→</span>
                 </a>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

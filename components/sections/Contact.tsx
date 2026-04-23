@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/ui/Reveal";
+
 export function Contact() {
   return (
     <section
@@ -13,7 +15,7 @@ export function Contact() {
         }}
       />
       <div className="container-x relative grid gap-12 md:grid-cols-2">
-        <div>
+        <Reveal>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-300">
             Get in touch
           </p>
@@ -24,9 +26,9 @@ export function Contact() {
             Clinicians, pharmacists and partners can contact us for clinical
             information, supply enquiries and partnership opportunities.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 backdrop-blur">
+        <Reveal delay={140} className="card-lift rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 backdrop-blur">
           <dl className="space-y-6">
             <Row label="General enquiries">
               <a
@@ -46,7 +48,7 @@ export function Contact() {
             </Row>
             <Row label="Address">
               <span className="text-teal-100">
-                Vance Medical Ltd, United Kingdom
+                Vance Medical Foods Ltd, United Kingdom
               </span>
             </Row>
             <Row label="Group">
@@ -60,7 +62,7 @@ export function Contact() {
               </a>
             </Row>
           </dl>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ export function Hero() {
 
       <div className="relative flex h-full items-center">
         <div className="container-x">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl animate-fade-in-up">
             <p className="mb-5 inline-block rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
               Medical foods · Gastrointestinal health
             </p>

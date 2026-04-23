@@ -11,7 +11,7 @@ const nav = [
 export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-teal-100 bg-teal-50/80 backdrop-blur">
-      <div className="container-x flex h-16 items-center justify-between md:h-20">
+      <div className="container-x flex h-20 items-center justify-between md:h-28">
         <a href="#top" aria-label="Vance Medical home">
           <Logo />
         </a>

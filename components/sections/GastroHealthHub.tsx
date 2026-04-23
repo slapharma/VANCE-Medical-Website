@@ -1,11 +1,13 @@
+import { Reveal } from "@/components/ui/Reveal";
+
 export function GastroHealthHub() {
   return (
     <section
       id="gastrohealthhub"
-      className="relative overflow-hidden bg-white py-20 md:py-28"
+      className="relative overflow-hidden bg-teal-50 py-20 md:py-28"
     >
       <div className="container-x grid items-center gap-12 md:grid-cols-12">
-        <div className="md:col-span-6">
+        <Reveal className="md:col-span-6">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
             Community · Free to access
           </p>
@@ -51,11 +53,11 @@ export function GastroHealthHub() {
               <span aria-hidden className="ml-2">→</span>
             </a>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="md:col-span-6">
+        <Reveal delay={150} className="md:col-span-6">
           <div className="relative">
-            <div className="relative rounded-3xl bg-gradient-to-br from-teal-100 to-teal-300 p-8 shadow-card ring-1 ring-teal-300">
+            <div className="card-lift relative rounded-3xl bg-gradient-to-br from-teal-100 to-teal-300 p-8 shadow-card ring-1 ring-teal-300">
               <div className="rounded-2xl bg-white p-6 ring-1 ring-teal-100">
                 <div className="flex items-center justify-between border-b border-teal-100 pb-4">
                   <div className="flex items-center gap-2">
@@ -98,10 +100,10 @@ export function GastroHealthHub() {
                 </div>
               </div>
             </div>
-            <div aria-hidden className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-teal-500/50 blur-2xl" />
-            <div aria-hidden className="absolute -bottom-8 -left-6 h-32 w-32 rounded-full bg-teal-300 blur-3xl" />
+            <div aria-hidden className="animate-float-slow absolute -right-6 -top-6 h-24 w-24 rounded-full bg-teal-500/50 blur-2xl" />
+            <div aria-hidden className="animate-float-slow absolute -bottom-8 -left-6 h-32 w-32 rounded-full bg-teal-300 blur-3xl" style={{ animationDelay: "1.5s" }} />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
