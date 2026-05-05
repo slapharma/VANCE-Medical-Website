@@ -6,3 +6,8 @@ out
 *.log
 .vercel
 next-env.d.ts
+
+# Audit / review artefacts (Playwright captures, ad-hoc screenshots)
+.playwright-mcp/
+vance-live-home*.png
+vance-live-home*.md
