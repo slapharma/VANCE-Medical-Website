@@ -44,6 +44,47 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 20px 40px -16px rgba(0,128,128,0.35);
 }
 
+/* Long-form legal-prose typography (used by components/legal/LegalShell.tsx).
+   Avoids pulling in the @tailwindcss/typography plugin for one use-case. */
+.legal-prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--teal-900);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal-prose h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--teal-900);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.legal-prose p,
+.legal-prose ul,
+.legal-prose ol {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgb(0 77 77 / 0.85);
+  margin-bottom: 1rem;
+}
+.legal-prose ul,
+.legal-prose ol {
+  padding-left: 1.25rem;
+}
+.legal-prose ul { list-style: disc; }
+.legal-prose ol { list-style: decimal; }
+.legal-prose li { margin-bottom: 0.4rem; }
+.legal-prose a {
+  color: var(--teal-700);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--teal-300);
+}
+.legal-prose a:hover { color: var(--teal-900); }
+.legal-prose strong { color: var(--teal-900); }
+
 /* -------------------------------------------------------------------------
    Reduced-motion + no-JS safety net for the Reveal component.
 

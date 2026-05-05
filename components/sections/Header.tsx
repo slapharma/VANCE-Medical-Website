@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
+import { HCPModal, hasHCPAck } from "@/components/ui/HCPModal";
 
 const nav = [
   { href: "#about", label: "About" },
@@ -13,7 +14,19 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [hcpOpen, setHcpOpen] = useState(false);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
+
+  /** Soft HCP gate: skip modal if already acknowledged this device. */
+  const handleHcpClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpen(false); // close mobile drawer if open
+    if (hasHCPAck()) {
+      window.location.href = "/healthcare-professionals";
+      return;
+    }
+    setHcpOpen(true);
+  };
 
   // Body-scroll lock + ESC-to-close + focus the close button on open.
   useEffect(() => {
@@ -55,7 +68,8 @@ export function Header() {
             ))}
             <li>
               <a
-                href="#contact"
+                href="/healthcare-professionals"
+                onClick={handleHcpClick}
                 className="inline-flex items-center bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-900"
               >
                 Healthcare professionals
@@ -123,14 +137,16 @@ export function Header() {
             ))}
           </ul>
           <a
-            href="#contact"
-            onClick={() => setOpen(false)}
+            href="/healthcare-professionals"
+            onClick={handleHcpClick}
             className="mt-12 inline-flex w-full items-center justify-center bg-teal-700 px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-teal-900"
           >
             Healthcare professionals
           </a>
         </nav>
       </div>
+
+      <HCPModal open={hcpOpen} onClose={() => setHcpOpen(false)} />
     </header>
   );
 }
