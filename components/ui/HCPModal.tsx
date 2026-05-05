@@ -45,17 +45,21 @@ export function HCPModal({ open, onClose }: Props) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="hcp-dialog-title"
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-teal-900/70 px-5"
+      className="fixed inset-0 z-[60] overflow-y-auto bg-teal-900/70"
     >
-      {/* backdrop click to close */}
+      {/* backdrop click to close — full-bleed under the dialog */}
       <button
         type="button"
         aria-label="Close"
         tabIndex={-1}
         onClick={onClose}
-        className="absolute inset-0 cursor-default"
+        className="fixed inset-0 cursor-default"
       />
-      <div className="relative w-full max-w-md bg-white p-8 shadow-card ring-1 ring-teal-200">
+      {/* min-h-full + flex centring → modal centres on tall viewports, top-aligns
+          and scrolls naturally when content is taller than the viewport (the
+          previous flex-center-only layout cut off the top on short screens). */}
+      <div className="relative flex min-h-full items-center justify-center px-5 py-8 sm:py-12">
+        <div className="relative w-full max-w-md bg-white p-8 shadow-card ring-1 ring-teal-200">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
           Self-declaration
         </p>
@@ -97,6 +101,7 @@ export function HCPModal({ open, onClose }: Props) {
           </a>{" "}
           for further information.
         </p>
+        </div>
       </div>
     </div>
   );
