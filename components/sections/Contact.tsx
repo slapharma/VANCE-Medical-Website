@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/ui/Reveal";
+import { ContactForm } from "@/components/forms/ContactForm";
 
 export function Contact() {
   return (
@@ -14,8 +15,8 @@ export function Contact() {
             "radial-gradient(600px 300px at 80% 10%, #78BFBF 0%, transparent 60%), radial-gradient(500px 300px at 10% 90%, #AEDBDB 0%, transparent 60%)",
         }}
       />
-      <div className="container-x relative grid gap-12 md:grid-cols-2">
-        <Reveal>
+      <div className="container-x relative grid gap-12 md:grid-cols-12">
+        <Reveal className="md:col-span-5">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-300">
             Get in touch
           </p>
@@ -26,10 +27,8 @@ export function Contact() {
             Clinicians, pharmacists and partners can contact us for clinical
             information, supply enquiries and partnership opportunities.
           </p>
-        </Reveal>
 
-        <Reveal delay={140} className="card-lift  bg-white/5 p-8 ring-1 ring-white/10 backdrop-blur">
-          <dl className="space-y-6">
+          <dl className="mt-10 space-y-5">
             <Row label="General enquiries">
               <a
                 href="mailto:info@vancemedical.co.uk"
@@ -63,12 +62,31 @@ export function Contact() {
             </Row>
           </dl>
         </Reveal>
+
+        <Reveal
+          delay={140}
+          className="card-lift bg-white/5 p-8 ring-1 ring-white/10 backdrop-blur md:col-span-7"
+        >
+          <h3 className="mb-1 text-xl font-bold tracking-tight">
+            Send us a message
+          </h3>
+          <p className="mb-6 text-sm text-teal-100">
+            We typically respond within two working days.
+          </p>
+          <ContactForm />
+        </Reveal>
       </div>
     </section>
   );
 }
 
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
+function Row({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="grid grid-cols-[140px_1fr] items-baseline gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
       <dt className="text-xs font-semibold uppercase tracking-wider text-teal-300">
