@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
@@ -22,7 +23,13 @@ export function Footer() {
       <div className="container-x">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <Logo />
+            <Link
+              href="/"
+              aria-label="Vance Medical — home"
+              className="-my-1 inline-block"
+            >
+              <Logo />
+            </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-teal-900/75">
               Vance Medical Foods Ltd develops medical foods (Foods for Special
               Medical Purposes) for the dietary management of gastrointestinal

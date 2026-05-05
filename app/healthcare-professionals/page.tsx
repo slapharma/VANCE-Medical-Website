@@ -60,8 +60,11 @@ export default function HCPPage() {
                 <span className="inline-flex bg-teal-700 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
                   Coming soon
                 </span>
-                <h3 className="mt-4 text-2xl font-bold tracking-tight text-teal-900">
-                  EPAVANCE
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+                  Omega-3 (EPA) medical food
+                </p>
+                <h3 className="mt-1 text-2xl font-bold tracking-tight text-teal-900">
+                  Inflammatory bowel disease
                 </h3>
                 <p className="mt-3 text-sm text-teal-900/80">
                   Highly purified eicosapentaenoic acid (EPA) formulation,
@@ -73,13 +76,16 @@ export default function HCPPage() {
                 <span className="inline-flex border border-teal-700 bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-teal-700">
                   In development
                 </span>
-                <h3 className="mt-4 text-2xl font-bold tracking-tight text-teal-900">
-                  BVANCE
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+                  Butyrate capsule
+                </p>
+                <h3 className="mt-1 text-2xl font-bold tracking-tight text-teal-900">
+                  Irritable bowel syndrome
                 </h3>
                 <p className="mt-3 text-sm text-teal-900/80">
-                  Butyrate capsule for the dietary management of conditions
-                  where butyrate availability is a therapeutic target.
-                  Indication and specification details to follow.
+                  Butyrate capsule for the dietary management of irritable
+                  bowel syndrome, addressing conditions where butyrate
+                  availability is a therapeutic target.
                 </p>
               </div>
             </div>

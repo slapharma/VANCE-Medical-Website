@@ -6,7 +6,7 @@ const SITE_NAME = "Vance Medical Foods";
 const SITE_TITLE =
   "Vance Medical Foods — Medical Foods for Gastrointestinal Health";
 const SITE_DESC =
-  "Vance Medical Foods Ltd develops medical foods for the dietary management of gastrointestinal conditions. Makers of EPAVANCE and the forthcoming BVANCE butyrate capsule. Part of the SLA Pharma group.";
+  "Vance Medical Foods Ltd develops medical foods for the dietary management of gastrointestinal conditions, with an indication-led pipeline targeting inflammatory bowel disease (IBD) and irritable bowel syndrome (IBS). Part of the SLA Pharma group.";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -70,6 +70,7 @@ const orgJsonLd = {
     "Foods for Special Medical Purposes",
     "Gastrointestinal health",
     "Inflammatory bowel disease",
+    "Irritable bowel syndrome",
     "Eicosapentaenoic acid",
     "Butyrate",
   ],

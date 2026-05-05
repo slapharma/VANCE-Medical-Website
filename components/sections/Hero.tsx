@@ -28,10 +28,9 @@ export function Hero() {
               <span className="block text-white">for gastrointestinal health.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90 drop-shadow md:text-lg">
-              Vance Medical develops medical foods for the dietary management of
-              gastrointestinal conditions — built on more than two decades of
-              specialist gastroenterology expertise from our sister company,
-              SLA Pharma.
+              Vance Medical develops medical foods for the dietary management
+              of gastrointestinal conditions, bridging the worlds of
+              pharmaceutical science and medical nutrition.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a

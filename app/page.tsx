@@ -1,6 +1,7 @@
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { Mission } from "@/components/sections/Mission";
 import { Products } from "@/components/sections/Products";
 import { Science } from "@/components/sections/Science";
 import { GastroHealthHub } from "@/components/sections/GastroHealthHub";
@@ -14,6 +15,7 @@ export default function Page() {
       <main>
         <Hero />
         <About />
+        <Mission />
         <Products />
         <Science />
         <GastroHealthHub />

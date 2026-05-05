@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { HCPModal, hasHCPAck } from "@/components/ui/HCPModal";
@@ -28,6 +29,16 @@ export function Header() {
     setHcpOpen(true);
   };
 
+  /** Logo click: from `/` we scroll-to-top; from any other page we navigate
+   * home (Link handles the navigation). */
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      e.preventDefault();
+      setOpen(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   // Body-scroll lock + ESC-to-close + focus the close button on open.
   useEffect(() => {
     if (!open) return;
@@ -49,9 +60,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-teal-100 bg-teal-50/80 backdrop-blur">
       <div className="container-x flex h-20 items-center justify-between md:h-28">
-        <a href="#top" aria-label="Vance Medical home">
+        <Link
+          href="/"
+          aria-label="Vance Medical — home"
+          onClick={handleLogoClick}
+          className="-my-1 block"
+        >
           <Logo />
-        </a>
+        </Link>
 
         {/* Desktop nav (md and up) */}
         <nav className="hidden md:block">

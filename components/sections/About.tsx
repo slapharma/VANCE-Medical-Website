@@ -9,12 +9,13 @@ export function About() {
             About Vance Medical Foods
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
-            Two decades of gastroenterology expertise, applied to medical foods.
+            Three decades of gastroenterology expertise, applied to medical
+            foods.
           </h2>
         </Reveal>
         <Reveal delay={120} className="md:col-span-7">
           <p className="text-lg leading-relaxed text-teal-900/80">
-            Vance Medical Foods is the medical foods company of the{" "}
+            Vance Medical Foods is the medical foods division of the{" "}
             <a
               href="https://www.slapharma.com"
               target="_blank"
@@ -22,23 +23,21 @@ export function About() {
               className="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-900"
             >
               SLA Pharma group
-            </a>{" "}
-            — drawing on more than 20 years of specialist gastrointestinal
-            treatment development alongside leading clinicians and academic
-            centres.
+            </a>
+            , drawing on more than 30 years of specialist gastrointestinal
+            treatment development in partnership with leading clinicians and
+            academic centres.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
             We apply that same clinical rigour to a different therapeutic
             lever: nutrition. Our products are{" "}
             <strong className="text-teal-900">medical foods</strong> (FSMP),
             formulated for the dietary management of specific GI conditions and
-            used under medical supervision. Previously known as SLA Health, the
-            business is now{" "}
-            <strong className="text-teal-900">Vance Medical Foods Ltd</strong>.
+            used under medical supervision.
           </p>
 
           <dl className="mt-12 grid grid-cols-2 divide-y divide-teal-100 border-y border-teal-100 sm:grid-cols-4 sm:divide-x sm:divide-y-0">
-            <Fact title="20+ years" body="Gastroenterology heritage" />
+            <Fact title="30+ years" body="Gastroenterology heritage" />
             <Fact title="UK based" body="SLA Pharma group" />
             <Fact title="FSMP" body="Regulated medical foods" />
             <Fact title="Clinician-led" body="Under medical supervision" />
