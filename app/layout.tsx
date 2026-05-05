@@ -1,27 +1,108 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const SITE_URL = "https://www.vancemedical.co.uk";
+const SITE_NAME = "Vance Medical Foods";
+const SITE_TITLE =
+  "Vance Medical Foods — Medical Foods for Gastrointestinal Health";
+const SITE_DESC =
+  "Vance Medical Foods Ltd develops medical foods for the dietary management of gastrointestinal conditions. Makers of EPAVANCE and the forthcoming BVANCE butyrate capsule. Part of the SLA Pharma group.";
+
 export const metadata: Metadata = {
-  title: "Vance Medical Foods — Medical Foods for Gastrointestinal Health",
-  description:
-    "Vance Medical Foods Ltd develops medical foods for the dietary management of gastrointestinal conditions. Makers of EPAVANCE and the forthcoming BVANCE butyrate capsule. Part of the SLA Pharma group.",
-  metadataBase: new URL("https://www.vancemedical.co.uk"),
+  title: SITE_TITLE,
+  description: SITE_DESC,
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Vance Medical Foods — Medical Foods for Gastrointestinal Health",
+    title: SITE_TITLE,
     description:
       "Specialist medical foods for the dietary management of gastrointestinal conditions.",
-    url: "https://www.vancemedical.co.uk",
-    siteName: "Vance Medical Foods",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description:
+      "Specialist medical foods for the dietary management of gastrointestinal conditions.",
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.ico" },
+  // Note: app/icon.tsx, app/apple-icon.tsx, app/opengraph-image.tsx and
+  // app/twitter-image.tsx are picked up by Next.js's file conventions; no
+  // explicit `icons` config needed here.
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Vance Medical Foods Ltd",
+  alternateName: "Vance Medical",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  description: SITE_DESC,
+  parentOrganization: {
+    "@type": "Organization",
+    name: "SLA Pharma",
+    url: "https://www.slapharma.com",
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: "info@vancemedical.co.uk",
+      availableLanguage: ["English"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "medical information",
+      email: "medical@vancemedical.co.uk",
+      availableLanguage: ["English"],
+    },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "GB",
+  },
+  knowsAbout: [
+    "Medical foods",
+    "Foods for Special Medical Purposes",
+    "Gastrointestinal health",
+    "Inflammatory bowel disease",
+    "Eicosapentaenoic acid",
+    "Butyrate",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESC,
+  publisher: { "@type": "Organization", name: "Vance Medical Foods Ltd" },
+  inLanguage: "en-GB",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en-GB">
-      <body>{children}</body>
+      <body>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </body>
     </html>
   );
 }
