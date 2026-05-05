@@ -9,5 +9,8 @@ next-env.d.ts
 
 # Audit / review artefacts (Playwright captures, ad-hoc screenshots)
 .playwright-mcp/
-vance-live-home*.png
-vance-live-home*.md
+vance-*.png
+vance-*.md
+
+# Personal Claude Code overrides (permissions, local-only settings)
+.claude/settings.local.json
