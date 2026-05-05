@@ -43,3 +43,28 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 20px 40px -16px rgba(0,128,128,0.35);
 }
+
+/* -------------------------------------------------------------------------
+   Reduced-motion + no-JS safety net for the Reveal component.
+
+   Reveal initialises elements at opacity:0 / translate-y so they can fade in
+   when scrolled into view. These overrides guarantee the content is visible
+   regardless of JS/observer state for:
+     • users with `prefers-reduced-motion: reduce`
+     • crawlers/browsers with JS disabled (combined with the <noscript>
+       <style> tag in layout.tsx)
+     • automated tools (Lighthouse, Playwright fullPage screenshots) that
+       capture the page without scrolling far enough to fire the observer.
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .transition-all.duration-700 {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-fade-in-up,
+  .animate-float-slow {
+    animation: none !important;
+  }
+  html { scroll-behavior: auto; }
+}

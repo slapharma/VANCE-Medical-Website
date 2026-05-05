@@ -92,6 +92,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-GB">
+      <head>
+        {/* No-JS fallback: ensures Reveal-initialised content is visible for
+            crawlers and users with JavaScript disabled. Pairs with the
+            prefers-reduced-motion CSS override in globals.css. */}
+        <noscript>
+          <style>{`
+            .transition-all.duration-700 { opacity: 1 !important; transform: none !important; }
+          `}</style>
+        </noscript>
+      </head>
       <body>
         {children}
         <script
