@@ -57,64 +57,72 @@ export function Header() {
     };
   }, [open]);
 
+  // We render <header> and the mobile drawer as SIBLINGS via a Fragment.
+  // The header has `backdrop-blur` which creates a containing block for any
+  // descendant `position: fixed` element — if the drawer were nested inside,
+  // its `fixed inset-0` would be clipped to the header's bounding box (~80px
+  // tall on mobile) instead of the viewport. Making the drawer a sibling lets
+  // it cover the page properly.
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-teal-100 bg-teal-50/80 backdrop-blur">
-      <div className="container-x flex h-20 items-center justify-between md:h-28">
-        <Link
-          href="/"
-          aria-label="Vance Medical — home"
-          onClick={handleLogoClick}
-          className="-my-1 block"
-        >
-          <Logo />
-        </Link>
+    <>
+      <header className="sticky top-0 z-40 w-full border-b border-teal-100 bg-teal-50/80 backdrop-blur">
+        <div className="container-x flex h-20 items-center justify-between md:h-28">
+          <Link
+            href="/"
+            aria-label="Vance Medical — home"
+            onClick={handleLogoClick}
+            className="-my-1 block"
+          >
+            <Logo />
+          </Link>
 
-        {/* Desktop nav (md and up) */}
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-8 text-sm font-medium text-teal-900">
-            {nav.map((n) => (
-              <li key={n.href}>
+          {/* Desktop nav (md and up) */}
+          <nav className="hidden md:block">
+            <ul className="flex items-center gap-8 text-sm font-medium text-teal-900">
+              {nav.map((n) => (
+                <li key={n.href}>
+                  <a
+                    href={n.href}
+                    className="transition-colors hover:text-teal-700"
+                  >
+                    {n.label}
+                  </a>
+                </li>
+              ))}
+              <li>
                 <a
-                  href={n.href}
-                  className="transition-colors hover:text-teal-700"
+                  href="/healthcare-professionals"
+                  onClick={handleHcpClick}
+                  className="inline-flex items-center bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-900"
                 >
-                  {n.label}
+                  Healthcare professionals
                 </a>
               </li>
-            ))}
-            <li>
-              <a
-                href="/healthcare-professionals"
-                onClick={handleHcpClick}
-                className="inline-flex items-center bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-900"
-              >
-                Healthcare professionals
-              </a>
-            </li>
-          </ul>
-        </nav>
+            </ul>
+          </nav>
 
-        {/* Hamburger (below md) */}
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          aria-controls="mobile-menu"
-          aria-expanded={open}
-          className="-mr-2 inline-flex h-12 w-12 items-center justify-center text-teal-900 transition-colors hover:text-teal-700 md:hidden"
-        >
-          <HamburgerIcon />
-        </button>
-      </div>
+          {/* Hamburger (below md) */}
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+            aria-controls="mobile-menu"
+            aria-expanded={open}
+            className="-mr-2 inline-flex h-12 w-12 items-center justify-center text-teal-900 transition-colors hover:text-teal-700 md:hidden"
+          >
+            <HamburgerIcon />
+          </button>
+        </div>
+      </header>
 
-      {/* Mobile drawer (full-screen overlay, slide-in from top) */}
+      {/* Mobile drawer — sibling of <header>, full-bleed white panel. */}
       <div
         id="mobile-menu"
         role="dialog"
         aria-modal="true"
         aria-label="Site menu"
         aria-hidden={!open}
-        className={`fixed inset-0 z-50 bg-teal-50 transition-[opacity,transform] duration-300 ease-out md:hidden ${
+        className={`fixed inset-0 z-50 bg-white transition-[opacity,transform] duration-300 ease-out md:hidden ${
           open
             ? "translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0"
@@ -163,7 +171,7 @@ export function Header() {
       </div>
 
       <HCPModal open={hcpOpen} onClose={() => setHcpOpen(false)} />
-    </header>
+    </>
   );
 }
 
