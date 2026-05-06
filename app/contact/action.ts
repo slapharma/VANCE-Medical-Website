@@ -1,26 +1,22 @@
 "use server";
 
+import {
+  escapeHtml,
+  getContactTo,
+  getFromAddress,
+  getMailer,
+} from "@/lib/mailer";
+
 /**
  * submitContact — server action for the home-page contact form.
  *
- * For now this logs the submission server-side and returns success. To wire
- * up real email delivery, swap the `// TODO: send` block for one of:
+ * Delivers the submission via Gmail SMTP (see `lib/mailer.ts` for env-var
+ * setup). If the SMTP credentials aren't configured (e.g. local dev without
+ * .env.local), the submission is logged to the server console and the form
+ * still returns success — UI is fully testable without a Gmail account.
  *
- *   • Resend (preferred for Next.js):
- *       import { Resend } from 'resend';
- *       const resend = new Resend(process.env.RESEND_API_KEY);
- *       await resend.emails.send({
- *         from: 'Vance Medical <noreply@vancemedical.co.uk>',
- *         to: ['contact@vancemedical.co.uk'],
- *         replyTo: data.email,
- *         subject: `[${data.role}] ${data.name} — Vance Medical contact form`,
- *         text: `From: ${data.name} <${data.email}>\nRole: ${data.role}\n\n${data.message}`,
- *       });
- *
- *   • Postmark / SendGrid / nodemailer — same shape, different SDK.
- *
- * Whichever you pick, set the API key as an env var on Vercel
- * (Project → Settings → Environment Variables → Production + Preview).
+ * Validation runs first; a bad submission never reaches Gmail and never
+ * reveals the existence of the honeypot trap.
  */
 
 export type ContactSubmitState =
@@ -31,14 +27,25 @@ export type ContactSubmitState =
 const ROLES = ["hcp", "patient", "partner", "press", "other"] as const;
 type Role = (typeof ROLES)[number];
 
+const ROLE_LABEL: Record<Role, string> = {
+  hcp: "Healthcare professional",
+  patient: "Patient or carer",
+  partner: "Industry partner",
+  press: "Press or media",
+  other: "Other",
+};
+
+const SUCCESS_MESSAGE =
+  "Thanks. Your message is with our team and we typically reply within two working days.";
+
 export async function submitContact(
   _prev: ContactSubmitState,
   formData: FormData
 ): Promise<ContactSubmitState> {
   // Honeypot — bots filling every field will populate this; humans don't.
   if (formData.get("website")) {
-    // Silent success to avoid confirming the trap is in place.
-    return { status: "success", message: "Thanks. We'll be in touch." };
+    // Silent success to avoid confirming the trap exists.
+    return { status: "success", message: SUCCESS_MESSAGE };
   }
 
   const name = String(formData.get("name") ?? "").trim();
@@ -46,7 +53,6 @@ export async function submitContact(
   const role = String(formData.get("role") ?? "").trim() as Role;
   const message = String(formData.get("message") ?? "").trim();
 
-  // Basic validation — match the client-side `required` attrs and add bounds.
   if (!name || name.length > 120) {
     return { status: "error", message: "Please enter your name." };
   }
@@ -67,21 +73,55 @@ export async function submitContact(
     };
   }
 
-  // TODO: send email — see comment block at top of file.
-  // For now, log to the server console so the submission isn't lost.
-  // eslint-disable-next-line no-console
-  console.log("[contact-submission]", {
+  const submission = {
     timestamp: new Date().toISOString(),
     name,
     email,
     role,
-    messageLength: message.length,
-    messagePreview: message.slice(0, 200),
-  });
-
-  return {
-    status: "success",
-    message:
-      "Thanks. Your message is with our team and we typically reply within two working days.",
+    roleLabel: ROLE_LABEL[role],
+    message,
   };
+
+  const mailer = getMailer();
+  if (!mailer) {
+    // No SMTP creds → log the submission so it isn't lost in dev.
+    // eslint-disable-next-line no-console
+    console.log("[contact-submission]", submission);
+    return { status: "success", message: SUCCESS_MESSAGE };
+  }
+
+  try {
+    const subjectRole = ROLE_LABEL[role];
+    await mailer.sendMail({
+      from: `Vance Medical website <${getFromAddress()}>`,
+      to: getContactTo(),
+      replyTo: `${name} <${email}>`,
+      subject: `[${subjectRole}] ${name} — Vance Medical contact form`,
+      text:
+        `New contact-form submission\n\n` +
+        `Role:    ${subjectRole}\n` +
+        `Name:    ${name}\n` +
+        `Email:   ${email}\n` +
+        `Sent:    ${submission.timestamp}\n\n` +
+        `Message:\n${message}\n`,
+      html:
+        `<table style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#0B2B2B;line-height:1.5">` +
+        `<tr><td style="padding:6px 16px 6px 0;color:#008080;font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:0.06em">Role</td><td>${escapeHtml(subjectRole)}</td></tr>` +
+        `<tr><td style="padding:6px 16px 6px 0;color:#008080;font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:0.06em">Name</td><td>${escapeHtml(name)}</td></tr>` +
+        `<tr><td style="padding:6px 16px 6px 0;color:#008080;font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:0.06em">Email</td><td><a href="mailto:${escapeHtml(email)}" style="color:#008080">${escapeHtml(email)}</a></td></tr>` +
+        `<tr><td style="padding:6px 16px 6px 0;color:#008080;font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:0.06em">Sent</td><td>${escapeHtml(submission.timestamp)}</td></tr>` +
+        `</table>` +
+        `<hr style="border:0;border-top:1px solid #DEF4F4;margin:20px 0">` +
+        `<div style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#0B2B2B;line-height:1.6;white-space:pre-wrap">${escapeHtml(message)}</div>`,
+    });
+  } catch (err) {
+    // Don't lose the submission if SMTP fails — log full payload so it can
+    // be reconstructed from Vercel's runtime logs.
+    // eslint-disable-next-line no-console
+    console.error("[contact-submission] mailer error:", err, submission);
+    // Still return success to the user — they shouldn't see internal errors,
+    // and operations can recover the message from logs.
+  }
+
+  return { status: "success", message: SUCCESS_MESSAGE };
 }

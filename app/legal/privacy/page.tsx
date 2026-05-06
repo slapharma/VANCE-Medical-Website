@@ -80,9 +80,10 @@ export default function PrivacyPage() {
           (USA, with adequacy or standard contractual clauses in place).
         </li>
         <li>
-          <strong>Email service provider</strong>: for transactional and
-          newsletter emails when integrated. We will update this notice with
-          the named provider before any production traffic is processed.
+          <strong>Google LLC (Gmail / Google Workspace)</strong>: contact-form
+          submissions and newsletter signups are delivered to a Vance Medical
+          inbox via Google&apos;s SMTP relay. Google&apos;s standard data
+          protection terms apply.
         </li>
       </ul>
 
