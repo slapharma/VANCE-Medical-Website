@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalShell } from "@/components/legal/LegalShell";
 
 export const metadata: Metadata = {
-  title: "Terms of use — Vance Medical Foods",
+  title: "Terms of use | Vance Medical Foods",
   description:
     "Terms of use for vancemedical.co.uk, the website of Vance Medical Foods Ltd.",
   alternates: { canonical: "/legal/terms" },

@@ -38,7 +38,7 @@ export async function submitContact(
   // Honeypot — bots filling every field will populate this; humans don't.
   if (formData.get("website")) {
     // Silent success to avoid confirming the trap is in place.
-    return { status: "success", message: "Thanks — we'll be in touch." };
+    return { status: "success", message: "Thanks. We'll be in touch." };
   }
 
   const name = String(formData.get("name") ?? "").trim();
@@ -82,6 +82,6 @@ export async function submitContact(
   return {
     status: "success",
     message:
-      "Thanks — your message is with our team. We typically reply within two working days.",
+      "Thanks. Your message is with our team and we typically reply within two working days.",
   };
 }

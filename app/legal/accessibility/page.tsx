@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalShell } from "@/components/legal/LegalShell";
 
 export const metadata: Metadata = {
-  title: "Accessibility statement — Vance Medical Foods",
+  title: "Accessibility statement | Vance Medical Foods",
   description:
     "Vance Medical Foods accessibility statement. We aim to meet WCAG 2.1 AA across vancemedical.co.uk.",
   alternates: { canonical: "/legal/accessibility" },
@@ -31,7 +31,7 @@ export default function AccessibilityPage() {
       <h2>What we have done</h2>
       <ul>
         <li>
-          The site is built with semantic HTML — landmarks (
+          The site is built with semantic HTML, with landmarks (
           <code>header</code>, <code>main</code>, <code>nav</code>,{" "}
           <code>footer</code>), heading hierarchy, descriptive labels and{" "}
           <code>alt</code> text on meaningful images.
@@ -39,7 +39,7 @@ export default function AccessibilityPage() {
         <li>
           Scroll-triggered fade-in animations honour{" "}
           <code>prefers-reduced-motion: reduce</code> and degrade gracefully if
-          JavaScript fails to load — content is always available regardless of
+          JavaScript fails to load. Content is always available regardless of
           motion preferences.
         </li>
         <li>

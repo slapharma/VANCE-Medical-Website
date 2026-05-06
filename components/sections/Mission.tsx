@@ -23,7 +23,7 @@ const pillars = [
   {
     label: "Patient",
     body:
-      "Every solution is designed around the real-world challenges patients face — not just clinical endpoints. Lived experience matters.",
+      "Every solution is designed around the real-world challenges patients face, not just clinical endpoints. Lived experience matters.",
     icon: (
       <svg
         viewBox="0 0 24 24"

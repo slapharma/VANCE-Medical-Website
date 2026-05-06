@@ -17,7 +17,7 @@ const pillars: Pillar[] = [
     tab: "Medical foods",
     title: "What are medical foods?",
     body:
-      "Medical foods — known in the UK and EU as Foods for Special Medical Purposes (FSMP) — are a regulated category formulated for patients with specific conditions. They are used under medical supervision and sit distinct from supplements and from medicines.",
+      "Medical foods (known in the UK and EU as Foods for Special Medical Purposes, FSMP) are a regulated category formulated for patients with specific conditions. They are used under medical supervision, sitting distinct from supplements and from medicines.",
     highlights: [
       { label: "Category", value: "FSMP (UK / EU)" },
       { label: "Use", value: "Under medical supervision" },
@@ -41,7 +41,7 @@ const pillars: Pillar[] = [
     tab: "Our approach",
     title: "Our approach.",
     body:
-      "We select nutrients with a recognised physiological role, formulate to a clinically relevant specification, and partner with healthcare professionals to ensure safe, appropriate use — held to the same rigour we apply to licensed medicines.",
+      "We select nutrients with a recognised physiological role, formulate to a clinically relevant specification, and partner with healthcare professionals to ensure safe, appropriate use, held to the same rigour we apply to licensed medicines.",
     highlights: [
       { label: "Formulation", value: "Clinically relevant" },
       { label: "Quality", value: "Pharma-grade rigour" },
@@ -78,7 +78,7 @@ export function Science() {
             aria-label="Science topics"
             className="md:col-span-4"
           >
-            <div className="flex gap-2 overflow-x-auto md:flex-col md:gap-0">
+            <div className="flex flex-col gap-0">
               {pillars.map((p) => {
                 const isActive = p.key === active;
                 return (

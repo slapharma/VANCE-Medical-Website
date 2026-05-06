@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalShell } from "@/components/legal/LegalShell";
 
 export const metadata: Metadata = {
-  title: "Privacy notice — Vance Medical Foods",
+  title: "Privacy notice | Vance Medical Foods",
   description:
     "How Vance Medical Foods Ltd collects, uses and protects personal data submitted via vancemedical.co.uk.",
   alternates: { canonical: "/legal/privacy" },
@@ -30,13 +30,13 @@ export default function PrivacyPage() {
       <h2>What data we collect</h2>
       <ul>
         <li>
-          <strong>Information you give us</strong> — when you use the contact
+          <strong>Information you give us</strong>: when you use the contact
           form or newsletter signup, we collect your name (contact form only),
           email address, role (HCP / patient / partner / press), and the
           contents of your message.
         </li>
         <li>
-          <strong>Technical information</strong> — basic server logs (IP
+          <strong>Technical information</strong>: basic server logs (IP
           address, request timestamps) that our hosting provider, Vercel,
           retains for service-operation purposes.
         </li>
@@ -76,11 +76,11 @@ export default function PrivacyPage() {
       </p>
       <ul>
         <li>
-          <strong>Vercel Inc.</strong> — site hosting and form-action execution
+          <strong>Vercel Inc.</strong>: site hosting and form-action execution
           (USA, with adequacy or standard contractual clauses in place).
         </li>
         <li>
-          <strong>Email service provider</strong> — for transactional and
+          <strong>Email service provider</strong>: for transactional and
           newsletter emails when integrated. We will update this notice with
           the named provider before any production traffic is processed.
         </li>

@@ -3,7 +3,7 @@ import { Header } from "@/components/sections/Header";
 import { Footer } from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
-  title: "For healthcare professionals — Vance Medical Foods",
+  title: "For healthcare professionals | Vance Medical Foods",
   description:
     "Information for UK healthcare professionals about Vance Medical Foods' pipeline of medical foods (Foods for Special Medical Purposes) for gastrointestinal health.",
   alternates: { canonical: "/healthcare-professionals" },
@@ -138,8 +138,8 @@ export default function HCPPage() {
               Regulatory category
             </h2>
             <p className="mt-4 text-base leading-relaxed text-teal-900/80">
-              Our products are <strong>medical foods</strong> — in the UK and
-              EU known as Foods for Special Medical Purposes (FSMP) — a
+              Our products are <strong>medical foods</strong> (in the UK and
+              EU known as Foods for Special Medical Purposes, or FSMP), a
               regulated category distinct from food supplements and from
               medicines. They are formulated for the dietary management of
               specific conditions and are intended for use under medical

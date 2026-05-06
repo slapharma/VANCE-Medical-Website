@@ -64,14 +64,29 @@ export function ContactForm() {
               "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='%23004D4D'><path d='M2 4l4 4 4-4z'/></svg>\")",
           }}
         >
-          <option value="" disabled>
+          {/* Native <option> elements respect background-color and color in
+              all evergreen browsers; this gives the dark-teal-on-white look
+              the brand wants when the dropdown popup opens, even though the
+              closed-select display stays white-on-dark to match the
+              surrounding form fields. */}
+          <option value="" disabled className="bg-white text-teal-900">
             Choose one…
           </option>
-          <option value="hcp">Healthcare professional</option>
-          <option value="patient">Patient or carer</option>
-          <option value="partner">Industry partner</option>
-          <option value="press">Press or media</option>
-          <option value="other">Other</option>
+          <option value="hcp" className="bg-white text-teal-900">
+            Healthcare professional
+          </option>
+          <option value="patient" className="bg-white text-teal-900">
+            Patient or carer
+          </option>
+          <option value="partner" className="bg-white text-teal-900">
+            Industry partner
+          </option>
+          <option value="press" className="bg-white text-teal-900">
+            Press or media
+          </option>
+          <option value="other" className="bg-white text-teal-900">
+            Other
+          </option>
         </select>
       </Field>
 

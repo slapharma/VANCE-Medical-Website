@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalShell } from "@/components/legal/LegalShell";
 
 export const metadata: Metadata = {
-  title: "Cookies — Vance Medical Foods",
+  title: "Cookies | Vance Medical Foods",
   description:
     "How vancemedical.co.uk uses cookies. We do not currently use any analytics or advertising cookies.",
   alternates: { canonical: "/legal/cookies" },

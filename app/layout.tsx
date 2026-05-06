@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 
 const SITE_URL = "https://www.vancemedical.co.uk";
 const SITE_NAME = "Vance Medical Foods";
 const SITE_TITLE =
-  "Vance Medical Foods — Medical Foods for Gastrointestinal Health";
+  "Vance Medical Foods | Medical Foods for Gastrointestinal Health";
 const SITE_DESC =
   "Vance Medical Foods Ltd develops medical foods for the dietary management of gastrointestinal conditions, with an indication-led pipeline targeting inflammatory bowel disease (IBD) and irritable bowel syndrome (IBS). Part of the SLA Pharma group.";
 
@@ -105,6 +106,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <CookieBanner />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}

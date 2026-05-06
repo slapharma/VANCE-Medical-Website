@@ -34,9 +34,9 @@ const products: Product[] = [
     category: "Butyrate capsule",
     status: "In development",
     summary:
-      "A forthcoming butyrate capsule designed to deliver a short-chain fatty acid with a well-established role in gut epithelial health, developed for the dietary management of irritable bowel syndrome (IBS).",
+      "A forthcoming butyrate capsule designed to deliver a short-chain fatty acid with a well-established role in gut health, developed for the dietary management of irritable bowel syndrome (IBS).",
     bullets: [
-      "Butyrate — a key short-chain fatty acid",
+      "Butyrate, a key short-chain fatty acid",
       "Convenient oral capsule format",
       "Targeted at IBS dietary management",
     ],

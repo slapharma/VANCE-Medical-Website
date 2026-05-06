@@ -12,7 +12,7 @@ export function GastroHealthHub() {
             Community · Free to access
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
-            GastroHealthHub — knowledge for patients and practitioners.
+            GastroHealthHub: knowledge for patients and practitioners.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
             Vance Medical proudly supports{" "}
@@ -23,8 +23,8 @@ export function GastroHealthHub() {
               className="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-900"
             >
               GastroHealthHub.com
-            </a>{" "}
-            — a free, open knowledge platform for people living with
+            </a>
+            , a free, open knowledge platform for people living with
             inflammatory bowel disease (IBD) and associated gastrointestinal
             conditions, and for the clinicians who care for them.
           </p>
