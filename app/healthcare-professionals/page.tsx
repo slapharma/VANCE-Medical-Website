@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import Image from "next/image";
 import { Header } from "@/components/sections/Header";
 import { Footer } from "@/components/sections/Footer";
+import { Reveal } from "@/components/ui/Reveal";
+import { HCPContactForm } from "@/components/forms/HCPContactForm";
 
 export const metadata: Metadata = {
   title: "For healthcare professionals | Vance Medical Foods",
@@ -16,34 +20,58 @@ export default function HCPPage() {
     <>
       <Header />
       <main className="bg-white">
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-teal-50 py-20 md:py-28">
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-[0.18]"
-            style={{
-              backgroundImage:
-                "radial-gradient(700px 400px at 80% 20%, rgba(120,191,191,0.55), transparent 60%), radial-gradient(500px 300px at 10% 90%, rgba(174,219,219,0.55), transparent 60%)",
-            }}
+        {/* Hero — photographic, mirrors components/sections/Hero.tsx structure
+            with a stronger overlay so this page reads as a calmer, more
+            clinical destination than the home page. */}
+        <section className="relative h-[60vh] min-h-[460px] max-h-[640px] w-full overflow-hidden">
+          <Image
+            src="/hero-gi.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
           />
-          <div className="container-x relative max-w-3xl">
-            <p className="mb-5 inline-block border border-teal-300 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
-              For healthcare professionals
-            </p>
-            <h1 className="text-4xl font-extrabold tracking-tight text-teal-900 md:text-5xl">
-              Clinical resources for medical foods in gastrointestinal health.
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-teal-900/80">
-              These pages are intended for UK clinicians, pharmacists and
-              other healthcare professionals. Information here describes the
-              regulatory category, our pipeline status, and how to request
-              clinical detail.
-            </p>
+          <div className="absolute inset-0 bg-gradient-to-b from-teal-900/85 via-teal-900/60 to-teal-900/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(700px_400px_at_80%_20%,rgba(120,191,191,0.30),transparent_60%)]" />
+
+          <div className="relative flex h-full items-center">
+            <div className="container-x">
+              <div className="max-w-2xl animate-fade-in-up">
+                <p className="mb-5 inline-block border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
+                  For healthcare professionals
+                </p>
+                <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white drop-shadow-lg sm:text-5xl md:text-6xl">
+                  <span className="block text-teal-300">Clinical resources</span>
+                  <span className="block text-white">for medical foods in GI health.</span>
+                </h1>
+                <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90 drop-shadow md:text-lg">
+                  These pages are intended for UK clinicians, pharmacists and
+                  other healthcare professionals — pipeline detail, the
+                  regulatory category, and direct lines to our medical-information team.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href="#pipeline"
+                    className="inline-flex items-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 shadow-card transition-colors hover:bg-teal-100"
+                  >
+                    View pipeline
+                    <span aria-hidden className="ml-2">→</span>
+                  </a>
+                  <a
+                    href="#hcp-contact"
+                    className="inline-flex items-center border border-white/60 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20"
+                  >
+                    Request information
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Pipeline status */}
-        <section className="bg-white py-16 md:py-20">
+        <section id="pipeline" className="bg-white py-16 md:py-20">
           <div className="container-x max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-teal-900">
               Pipeline status
@@ -56,8 +84,8 @@ export default function HCPPage() {
             </p>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
-              <div className="border border-teal-100 bg-teal-50 p-7">
-                <span className="inline-flex bg-teal-700 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+              <div className="flex flex-col border border-teal-100 bg-teal-50 p-7">
+                <span className="inline-flex w-max bg-teal-700 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
                   Coming soon
                 </span>
                 <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
@@ -71,9 +99,18 @@ export default function HCPPage() {
                   designed for daily long-term use under medical supervision.
                   Detailed clinical specification available on request.
                 </p>
+                <div className="mt-6">
+                  <a
+                    href="?product=epa-ibd#hcp-contact"
+                    className="inline-flex items-center bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
+                  >
+                    Request product details
+                    <span aria-hidden className="ml-2">→</span>
+                  </a>
+                </div>
               </div>
-              <div className="border border-teal-100 bg-white p-7">
-                <span className="inline-flex border border-teal-700 bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-teal-700">
+              <div className="flex flex-col border border-teal-100 bg-white p-7">
+                <span className="inline-flex w-max border border-teal-700 bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-teal-700">
                   In development
                 </span>
                 <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
@@ -87,47 +124,224 @@ export default function HCPPage() {
                   bowel syndrome, addressing conditions where butyrate
                   availability is a therapeutic target.
                 </p>
+                <div className="mt-6">
+                  <a
+                    href="?product=butyrate-ibs#hcp-contact"
+                    className="inline-flex items-center bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
+                  >
+                    Request product details
+                    <span aria-hidden className="ml-2">→</span>
+                  </a>
+                </div>
               </div>
             </div>
 
             <p className="mt-8 text-sm text-teal-900/70">
               Detailed prescribing information, formulation specifications and
               clinical evidence summaries will be published here as products
-              become available. To be notified, please contact our medical
-              information team.
+              become available.
             </p>
           </div>
         </section>
 
-        {/* Request information */}
-        <section className="bg-teal-100 py-16 md:py-20">
-          <div className="container-x max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight text-teal-900">
-              Request clinical information
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-teal-900/80">
-              For clinical detail, formulation queries, or supply enquiries,
-              please use the contact form on the home page (selecting{" "}
-              <strong>Healthcare professional</strong>) or email our medical
-              information team directly.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+        {/* Join us in our work */}
+        <section id="join-us" className="bg-teal-50 py-20 md:py-28">
+          <div className="container-x">
+            <Reveal className="max-w-3xl">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+                Collaborate with us
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
+                Join us in our work.
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
+                We work closely with clinicians, pharmacists and academic
+                centres to make medical foods more clinically useful. There are
+                four areas where HCP involvement makes the biggest difference.
+              </p>
+            </Reveal>
+
+            <div className="mt-14 grid gap-px overflow-hidden bg-teal-100 md:grid-cols-2 lg:grid-cols-4">
+              {pillars.map((p, i) => (
+                <Reveal
+                  key={p.label}
+                  delay={i * 100}
+                  className="group flex flex-col bg-teal-50 p-7 transition-colors hover:bg-white"
+                >
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center border border-teal-300 bg-white text-teal-700 transition-colors group-hover:border-teal-700">
+                    <div className="h-6 w-6">{p.icon}</div>
+                  </div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
+                    {p.label}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-teal-900/80">
+                    {p.body}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal className="mt-12 flex flex-wrap items-center gap-3">
               <a
-                href="/#contact"
+                href="#hcp-contact"
                 className="inline-flex items-center bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
               >
-                Contact form
-                <span aria-hidden className="ml-2">
-                  →
-                </span>
+                Get in touch with our medical team
+                <span aria-hidden className="ml-2">→</span>
               </a>
-              <a
-                href="mailto:medical@vancemedical.co.uk"
-                className="inline-flex items-center border border-teal-700 bg-white px-6 py-3 text-sm font-semibold text-teal-700 transition-colors hover:bg-white/70"
-              >
-                medical@vancemedical.co.uk
-              </a>
-            </div>
+              <span className="text-sm text-teal-900/70">
+                We'll route your enquiry to the right team within two working days.
+              </span>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Collaborate on GastroHealthHub */}
+        <section id="gastrohealthhub-collab" className="bg-white py-20 md:py-28">
+          <div className="container-x grid items-start gap-12 md:grid-cols-12">
+            <Reveal className="md:col-span-6">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+                Community partnership
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
+                Collaborate with us on GastroHealthHub.
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
+                Vance Medical proudly supports{" "}
+                <a
+                  href="https://www.gastrohealthhub.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-900"
+                >
+                  GastroHealthHub.com
+                </a>
+                , a free, open knowledge platform for people living with IBD,
+                IBS and related GI conditions, and for the clinicians who care
+                for them.
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-teal-900/80">
+                We're always looking for healthcare professionals to help shape
+                the content and engage with the community.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="https://www.gastrohealthhub.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
+                >
+                  Visit GastroHealthHub.com
+                  <span aria-hidden className="ml-2">→</span>
+                </a>
+                <a
+                  href="#hcp-contact"
+                  className="inline-flex items-center border border-teal-700 bg-white px-6 py-3 text-sm font-semibold text-teal-700 transition-colors hover:bg-teal-50"
+                >
+                  Discuss collaboration
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={140} className="md:col-span-6">
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {collabAreas.map((c) => (
+                  <li
+                    key={c.label}
+                    className="card-lift bg-teal-50 p-6 ring-1 ring-teal-100"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+                      {c.label}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-teal-900/80">
+                      {c.body}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* HCP contact */}
+        <section
+          id="hcp-contact"
+          className="relative overflow-hidden bg-teal-900 py-20 text-white md:py-28"
+        >
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.15]"
+            style={{
+              backgroundImage:
+                "radial-gradient(600px 300px at 80% 10%, #78BFBF 0%, transparent 60%), radial-gradient(500px 300px at 10% 90%, #AEDBDB 0%, transparent 60%)",
+            }}
+          />
+          <div className="container-x relative grid gap-12 md:grid-cols-12">
+            <Reveal className="md:col-span-5">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-300">
+                Medical information
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                Request clinical detail or discuss collaboration.
+              </h2>
+              <p className="mt-5 max-w-lg text-lg text-teal-100">
+                Use the form for any clinical, formulation, supply or
+                collaboration query. We typically reply within two working days.
+              </p>
+
+              <dl className="mt-10 space-y-5">
+                <Row label="Medical info">
+                  <a
+                    href="mailto:medical@vancemedical.co.uk"
+                    className="font-semibold text-white underline decoration-teal-300 underline-offset-4 hover:text-teal-100"
+                  >
+                    medical@vancemedical.co.uk
+                  </a>
+                </Row>
+                <Row label="General">
+                  <a
+                    href="mailto:contact@vancemedical.co.uk"
+                    className="font-semibold text-white underline decoration-teal-300 underline-offset-4 hover:text-teal-100"
+                  >
+                    contact@vancemedical.co.uk
+                  </a>
+                </Row>
+                <Row label="Address">
+                  <span className="text-teal-100">
+                    Vance Medical Foods Ltd, United Kingdom
+                  </span>
+                </Row>
+                <Row label="Group">
+                  <a
+                    href="https://www.slapharma.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-white underline decoration-teal-300 underline-offset-4 hover:text-teal-100"
+                  >
+                    Part of the SLA Pharma group
+                  </a>
+                </Row>
+              </dl>
+            </Reveal>
+
+            <Reveal
+              delay={140}
+              className="card-lift bg-white/5 p-8 ring-1 ring-white/10 backdrop-blur md:col-span-7"
+            >
+              <h3 className="mb-1 text-xl font-bold tracking-tight">
+                Send us an enquiry
+              </h3>
+              <p className="mb-6 text-sm text-teal-100">
+                Reaches our medical-information team. Two-working-day reply.
+              </p>
+              {/* Suspense boundary required for `useSearchParams()` inside
+                  HCPContactForm — without it the whole route opts into
+                  dynamic rendering and Next emits a build warning. */}
+              <Suspense fallback={<FormSkeleton />}>
+                <HCPContactForm />
+              </Suspense>
+            </Reveal>
           </div>
         </section>
 
@@ -159,3 +373,130 @@ export default function HCPPage() {
     </>
   );
 }
+
+function Row({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="grid grid-cols-[140px_1fr] items-baseline gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
+      <dt className="text-xs font-semibold uppercase tracking-wider text-teal-300">
+        {label}
+      </dt>
+      <dd className="text-base">{children}</dd>
+    </div>
+  );
+}
+
+function FormSkeleton() {
+  return (
+    <div aria-hidden className="space-y-5">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="h-[68px] bg-white/5" />
+        <div className="h-[68px] bg-white/5" />
+      </div>
+      <div className="h-[68px] bg-white/5" />
+      <div className="h-[68px] bg-white/5" />
+      <div className="h-[140px] bg-white/5" />
+    </div>
+  );
+}
+
+const pillars = [
+  {
+    label: "Clinical work",
+    body:
+      "Clinical advisory boards, investigator-initiated studies, and real-world evidence collaboration on FSMP use in GI conditions.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M9 3v6H3v6h6v6h6v-6h6V9h-6V3z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Product development",
+    body:
+      "Formulation feedback, advisory input on pipeline indications, and dosing rationale grounded in clinical experience.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M5 8a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z" />
+        <path d="M5 12h14" />
+      </svg>
+    ),
+  },
+  {
+    label: "Education",
+    body:
+      "Co-author HCP education materials, or guest-author and peer-review patient-facing content on GastroHealthHub.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M5 4h11l3 3v13H5z" />
+        <path d="M9 11h6M9 15h6M9 7h3" />
+      </svg>
+    ),
+  },
+  {
+    label: "Patient & caregiver support",
+    body:
+      "Refer patients to GastroHealthHub resources, or contribute to the support-group and lived-experience content base.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M12 21s-7-4.5-7-10a4.5 4.5 0 0 1 8-2.7A4.5 4.5 0 0 1 19 11c0 5.5-7 10-7 10z" />
+      </svg>
+    ),
+  },
+];
+
+const collabAreas = [
+  {
+    label: "Content authoring",
+    body: "Write or co-write explainers, evidence summaries, or condition guides for HCPs and patients.",
+  },
+  {
+    label: "Clinical review",
+    body: "Peer-review existing articles for clinical accuracy, currency, and tone.",
+  },
+  {
+    label: "Community Q&A",
+    body: "Answer patient and HCP questions in the Hub's community spaces.",
+  },
+  {
+    label: "Lived-experience referrals",
+    body: "Connect patients and caregivers with relevant Hub resources during routine care.",
+  },
+];
