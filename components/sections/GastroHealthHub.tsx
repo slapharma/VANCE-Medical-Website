@@ -1,5 +1,12 @@
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 
+// Source screenshot is 1688 x 4472 (aspect h/w = 2.65). Frame is rendered at
+// aspect-[5/8] (1.6 tall:wide) so the image needs to scroll
+//   (2.65 - 1.6) / 2.65 ≈ 39.6% of its own height
+// to reveal the rest. The CSS keyframes in globals.css use -40% (rounded) and
+// dwell for 8% on each end so visitors get a moment to register the top and
+// bottom states.
 export function GastroHealthHub() {
   return (
     <section
@@ -47,61 +54,66 @@ export function GastroHealthHub() {
               href="https://www.gastrohealthhub.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center  bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
+              className="inline-flex items-center bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
             >
               Visit GastroHealthHub.com
-              <span aria-hidden className="ml-2">→</span>
+              <span aria-hidden className="ml-2">
+                →
+              </span>
             </a>
           </div>
         </Reveal>
 
         <Reveal delay={150} className="md:col-span-6">
           <div className="relative">
-            <div className="card-lift relative  bg-gradient-to-br from-teal-100 to-teal-300 p-8 shadow-card ring-1 ring-teal-300">
-              <div className=" bg-white p-6 ring-1 ring-teal-100">
-                <div className="flex items-center justify-between border-b border-teal-100 pb-4">
+            {/* Browser-chrome frame holding the auto-scrolling site preview */}
+            <div className="card-lift relative bg-gradient-to-br from-teal-100 to-teal-300 p-4 shadow-card ring-1 ring-teal-300 sm:p-5">
+              <div className="overflow-hidden bg-white ring-1 ring-teal-100">
+                {/* Faux browser bar */}
+                <div className="flex items-center justify-between border-b border-teal-100 bg-teal-50/60 px-4 py-3">
                   <div className="flex items-center gap-2">
-                    <span className="h-2.5 w-2.5  bg-teal-300" />
-                    <span className="h-2.5 w-2.5  bg-teal-500" />
-                    <span className="h-2.5 w-2.5  bg-teal-700" />
+                    <span aria-hidden className="h-2.5 w-2.5 bg-teal-300" />
+                    <span aria-hidden className="h-2.5 w-2.5 bg-teal-500" />
+                    <span aria-hidden className="h-2.5 w-2.5 bg-teal-700" />
                   </div>
                   <span className="text-xs font-semibold text-teal-700">
                     gastrohealthhub.com
                   </span>
                 </div>
-                <div className="mt-6 space-y-4">
-                  <div className="flex items-center gap-3  bg-teal-50 p-3">
-                    <Dot />
-                    <div>
-                      <p className="text-sm font-semibold text-teal-900">
-                        Understanding ulcerative colitis
-                      </p>
-                      <p className="text-xs text-teal-900/60">Patient guide · 6 min read</p>
-                    </div>
+                {/* Scrollable preview window */}
+                <div className="relative w-full overflow-hidden bg-white aspect-[5/8]">
+                  <div className="absolute inset-x-0 top-0 animate-ghh-scroll">
+                    <Image
+                      src="/gastrohealthhub-screenshot.png"
+                      alt="Preview of the GastroHealthHub website, scrolling through hero, featured content, content discovery and articles sections."
+                      width={1688}
+                      height={4472}
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="block h-auto w-full select-none"
+                      priority={false}
+                    />
                   </div>
-                  <div className="flex items-center gap-3  bg-teal-50 p-3">
-                    <Dot />
-                    <div>
-                      <p className="text-sm font-semibold text-teal-900">
-                        Short-chain fatty acids and the gut barrier
-                      </p>
-                      <p className="text-xs text-teal-900/60">HCP resource · Evidence review</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3  bg-teal-50 p-3">
-                    <Dot />
-                    <div>
-                      <p className="text-sm font-semibold text-teal-900">
-                        Nutrition in IBD: what the evidence says
-                      </p>
-                      <p className="text-xs text-teal-900/60">Community discussion</p>
-                    </div>
-                  </div>
+                  {/* Subtle top + bottom fade so the scroll feels less abrupt */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-white to-transparent"
+                  />
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white to-transparent"
+                  />
                 </div>
               </div>
             </div>
-            <div aria-hidden className="animate-float-slow absolute -right-6 -top-6 h-24 w-24  bg-teal-500/50 blur-2xl" />
-            <div aria-hidden className="animate-float-slow absolute -bottom-8 -left-6 h-32 w-32  bg-teal-300 blur-3xl" style={{ animationDelay: "1.5s" }} />
+            <div
+              aria-hidden
+              className="animate-float-slow absolute -right-6 -top-6 h-24 w-24 bg-teal-500/50 blur-2xl"
+            />
+            <div
+              aria-hidden
+              className="animate-float-slow absolute -bottom-8 -left-6 h-32 w-32 bg-teal-300 blur-3xl"
+              style={{ animationDelay: "1.5s" }}
+            />
           </div>
         </Reveal>
       </div>
@@ -114,20 +126,9 @@ function Item({ children }: { children: React.ReactNode }) {
     <li className="flex items-start gap-3 text-base text-teal-900/85">
       <span
         aria-hidden
-        className="mt-2 inline-block h-1.5 w-1.5 shrink-0  bg-teal-700"
+        className="mt-2 inline-block h-1.5 w-1.5 shrink-0 bg-teal-700"
       />
       {children}
     </li>
-  );
-}
-
-function Dot() {
-  return (
-    <span
-      aria-hidden
-      className="inline-flex h-8 w-8 shrink-0 items-center justify-center  bg-teal-700 text-white"
-    >
-      <span className="h-2 w-2  bg-white" />
-    </span>
   );
 }
