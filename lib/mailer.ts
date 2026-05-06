@@ -26,12 +26,29 @@ export function getMailer(): Transporter | null {
   if (cached) return cached;
   const user = process.env.GMAIL_USER;
   const pass = process.env.GMAIL_APP_PASSWORD;
-  if (!user || !pass) return null;
+  if (!user || !pass) {
+    // Surface a single, structured config-status line so it's grep-able in
+    // Vercel logs without leaking the password. Useful for diagnosing
+    // "form did nothing" without redeploying with debug code.
+    // eslint-disable-next-line no-console
+    console.warn("[mailer] not configured: GMAIL_USER or GMAIL_APP_PASSWORD missing", {
+      hasUser: Boolean(user),
+      hasPass: Boolean(pass),
+    });
+    return null;
+  }
   cached = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false, // STARTTLS upgrade — Gmail requires this on 587
     auth: { user, pass },
+  });
+  // eslint-disable-next-line no-console
+  console.log("[mailer] configured", {
+    smtpUser: user,
+    fromAddress: getFromAddress(),
+    contactTo: getContactTo(),
+    newsletterTo: getNewsletterTo(),
   });
   return cached;
 }
