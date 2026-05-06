@@ -11,7 +11,7 @@
  *       const resend = new Resend(process.env.RESEND_API_KEY);
  *       await resend.emails.send({
  *         from: 'Vance Medical <noreply@vancemedical.co.uk>',
- *         to: ['info@vancemedical.co.uk'],
+ *         to: ['contact@vancemedical.co.uk'],
  *         replyTo: data.email,
  *         subject: `[${data.role}] ${data.name} — Vance Medical contact form`,
  *         text: `From: ${data.name} <${data.email}>\nRole: ${data.role}\n\n${data.message}`,

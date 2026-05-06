@@ -77,7 +77,7 @@ export default function AccessibilityPage() {
       <h2>Reporting an issue</h2>
       <p>
         If you find any part of the site difficult to use, please contact us at{" "}
-        <a href="mailto:info@vancemedical.co.uk">info@vancemedical.co.uk</a>.
+        <a href="mailto:contact@vancemedical.co.uk">contact@vancemedical.co.uk</a>.
         We aim to respond within five working days and to fix substantial
         issues within four weeks.
       </p>

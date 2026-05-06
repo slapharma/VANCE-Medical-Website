@@ -31,10 +31,10 @@ export function Contact() {
           <dl className="mt-10 space-y-5">
             <Row label="General enquiries">
               <a
-                href="mailto:info@vancemedical.co.uk"
+                href="mailto:contact@vancemedical.co.uk"
                 className="font-semibold text-white underline decoration-teal-300 underline-offset-4 hover:text-teal-100"
               >
-                info@vancemedical.co.uk
+                contact@vancemedical.co.uk
               </a>
             </Row>
             <Row label="Medical information">

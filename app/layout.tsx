@@ -52,7 +52,7 @@ const orgJsonLd = {
     {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "info@vancemedical.co.uk",
+      email: "contact@vancemedical.co.uk",
       availableLanguage: ["English"],
     },
     {

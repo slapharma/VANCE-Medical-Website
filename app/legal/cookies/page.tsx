@@ -47,7 +47,7 @@ export default function CookiesPage() {
       <h2>Questions</h2>
       <p>
         Email{" "}
-        <a href="mailto:info@vancemedical.co.uk">info@vancemedical.co.uk</a>{" "}
+        <a href="mailto:contact@vancemedical.co.uk">contact@vancemedical.co.uk</a>{" "}
         with any questions about how the site uses cookies.
       </p>
     </LegalShell>
