@@ -110,15 +110,17 @@ export function Header() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="/healthcare-professionals"
-                  onClick={handleHcpClick}
-                  className="inline-flex items-center bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-900"
-                >
-                  Healthcare professionals
-                </a>
-              </li>
+              {!onHCP && (
+                <li>
+                  <a
+                    href="/healthcare-professionals"
+                    onClick={handleHcpClick}
+                    className="inline-flex items-center bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-900"
+                  >
+                    Healthcare professionals
+                  </a>
+                </li>
+              )}
             </ul>
           </nav>
 
