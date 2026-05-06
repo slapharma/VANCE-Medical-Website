@@ -37,14 +37,14 @@ body {
 .animate-fade-in-up { animation: fade-in-up 0.8s ease-out both; }
 
 /* GastroHealthHub auto-scrolling site preview.
-   Image is 1688x4472 (aspect h/w ≈ 2.65). Frame is aspect-[5/8] (h/w = 1.6),
-   so the image needs to scroll (2.65 − 1.6) / 2.65 ≈ 39.6% of its own height
+   Image is 1688x4472 (aspect h/w ≈ 2.65). Frame is aspect-[5/6] (h/w = 1.2),
+   so the image needs to scroll (2.65 − 1.2) / 2.65 ≈ 54.7% of its own height
    to reveal the bottom. We dwell briefly at top and bottom so each state is
    readable, then ease back. 25 s loop is restful — fast enough to feel alive,
    slow enough not to be motion-distracting. */
 @keyframes ghh-scroll {
   0%, 8% { transform: translateY(0); }
-  46%, 54% { transform: translateY(-40%); }
+  46%, 54% { transform: translateY(-54%); }
   92%, 100% { transform: translateY(0); }
 }
 .animate-ghh-scroll {

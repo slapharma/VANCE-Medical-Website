@@ -2,11 +2,11 @@ import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 
 // Source screenshot is 1688 x 4472 (aspect h/w = 2.65). Frame is rendered at
-// aspect-[5/8] (1.6 tall:wide) so the image needs to scroll
-//   (2.65 - 1.6) / 2.65 ≈ 39.6% of its own height
-// to reveal the rest. The CSS keyframes in globals.css use -40% (rounded) and
-// dwell for 8% on each end so visitors get a moment to register the top and
-// bottom states.
+// aspect-[5/6] (1.2 tall:wide) so the image needs to scroll
+//   (2.65 - 1.2) / 2.65 ≈ 54.7% of its own height
+// to reveal the rest. The CSS keyframes in globals.css use -54% (rounded down
+// so we don't overscroll past the screenshot's bottom edge) and dwell for 8%
+// on each end so visitors get a moment to register the top and bottom states.
 export function GastroHealthHub() {
   return (
     <section
@@ -81,7 +81,7 @@ export function GastroHealthHub() {
                   </span>
                 </div>
                 {/* Scrollable preview window */}
-                <div className="relative w-full overflow-hidden bg-white aspect-[5/8]">
+                <div className="relative w-full overflow-hidden bg-white aspect-[5/6]">
                   <div className="absolute inset-x-0 top-0 animate-ghh-scroll">
                     <Image
                       src="/gastrohealthhub-screenshot.png"
