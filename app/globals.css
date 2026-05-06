@@ -55,6 +55,101 @@ body {
   .animate-ghh-scroll { animation: none; }
 }
 
+/* =========================================================================
+   Semantic component classes — composed via Tailwind's @apply.
+   Read JSX cleanly; tweak visuals in one place.
+   ========================================================================= */
+
+/* ----- Hero (homepage + HCP) -------------------------------------------- */
+.hero-section-base {
+  @apply relative w-full overflow-hidden;
+}
+.home-hero-section {
+  @apply hero-section-base;
+  height: 72vh;
+  min-height: 520px;
+  max-height: 760px;
+}
+.hcp-hero-section {
+  @apply hero-section-base;
+  height: 60vh;
+  min-height: 460px;
+  max-height: 640px;
+}
+.hero-pretitle {
+  @apply mb-5 inline-block border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur;
+}
+.homepage-hero-title {
+  @apply text-4xl font-extrabold leading-[1.05] tracking-tight text-white drop-shadow-lg sm:text-5xl md:text-6xl;
+}
+.hero-subhead {
+  @apply mt-6 max-w-xl text-base leading-relaxed text-white/90 drop-shadow md:text-lg;
+}
+.hero-cta-primary {
+  @apply inline-flex items-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 shadow-card transition-colors hover:bg-teal-100;
+}
+.hero-cta-outline {
+  @apply inline-flex items-center border border-white/60 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20;
+}
+
+/* ----- Section scaffolding --------------------------------------------- */
+.section-pad {
+  @apply py-20 md:py-28;
+}
+.section-pad-tight {
+  @apply py-16 md:py-20;
+}
+.section-pretitle {
+  @apply mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700;
+}
+.section-pretitle-on-dark {
+  @apply mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-teal-300;
+}
+.section-title {
+  @apply text-3xl font-bold tracking-tight text-teal-900 md:text-4xl;
+}
+.section-title-on-dark {
+  @apply text-3xl font-bold tracking-tight text-white md:text-4xl;
+}
+.section-subhead {
+  @apply mt-5 text-lg leading-relaxed text-teal-900/80;
+}
+.section-subhead-on-dark {
+  @apply mt-5 text-lg leading-relaxed text-teal-100;
+}
+
+/* ----- Buttons / CTAs (on light backgrounds) --------------------------- */
+.cta-teal {
+  @apply inline-flex items-center bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900;
+}
+.cta-teal-sm {
+  @apply inline-flex items-center bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900;
+}
+.cta-link-arrow {
+  @apply inline-flex items-center text-sm font-semibold text-teal-700 transition-colors hover:text-teal-900;
+}
+
+/* ----- Pipeline / product cards --------------------------------------- */
+.product-card {
+  @apply card-lift flex flex-col bg-white p-8 shadow-card ring-1 ring-teal-300;
+}
+/* Programme pretitle: same uppercase rhythm as section-pretitle, but the
+   visual differentiation between "Coming Soon" and "In Development" lives
+   in modifiers. The leading "Programme N |" stays muted; the status is
+   bolder so the eye lands on it first. */
+.programme-pretitle {
+  @apply mb-4 flex flex-wrap items-baseline gap-2 text-xs font-semibold uppercase tracking-[0.14em];
+}
+.programme-pretitle-num {
+  @apply text-teal-700/70;
+}
+.programme-pretitle-status-soon {
+  @apply text-teal-700;
+}
+.programme-pretitle-status-dev {
+  @apply text-teal-700/80;
+}
+
 .card-lift {
   transition: transform 350ms ease, box-shadow 350ms ease;
 }

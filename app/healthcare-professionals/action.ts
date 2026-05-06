@@ -32,7 +32,7 @@ const PRODUCT_LABEL: Record<Product, string> = {
 };
 
 const SUCCESS_MESSAGE =
-  "Thanks. Your enquiry is with our medical-information team and we typically reply within two working days.";
+  "Your contact request has been received, a member of our team will contact you shortly.";
 
 export async function submitHCPInfo(
   _prev: HCPSubmitState,

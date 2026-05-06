@@ -15,7 +15,7 @@ const pillars: Pillar[] = [
   {
     key: "what",
     tab: "Medical foods",
-    title: "What are medical foods?",
+    title: "Medical Food Standards",
     body:
       "Medical foods (known in the UK and EU as Foods for Special Medical Purposes, FSMP) are a regulated category formulated for patients with specific conditions. They are used under medical supervision, sitting distinct from supplements and from medicines.",
     highlights: [
@@ -26,8 +26,8 @@ const pillars: Pillar[] = [
   },
   {
     key: "why",
-    tab: "Why GI",
-    title: "Why gastroenterology?",
+    tab: "Gastro Focus",
+    title: "Gastroenterology Health",
     body:
       "The gut is central to absorption, immunity and systemic health. In many gastrointestinal conditions, targeted nutrition can meaningfully support symptom management and disease-related nutritional needs alongside conventional care.",
     highlights: [
@@ -39,7 +39,7 @@ const pillars: Pillar[] = [
   {
     key: "approach",
     tab: "Our approach",
-    title: "Our approach.",
+    title: "Pharmaceutical Approach",
     body:
       "We select nutrients with a recognised physiological role, formulate to a clinically relevant specification, and partner with healthcare professionals to ensure safe, appropriate use, held to the same rigour we apply to licensed medicines.",
     highlights: [
@@ -55,18 +55,16 @@ export function Science() {
   const current = pillars.find((p) => p.key === active) ?? pillars[0];
 
   return (
-    <section id="science" className="bg-white py-20 md:py-28">
+    <section id="science" className="section-pad bg-white">
       <div className="container-x">
         <Reveal className="max-w-3xl">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
-            Science &amp; category
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
+          <p className="section-pretitle">Science</p>
+          <h2 className="section-title">
             Targeted nutrition, used under medical supervision.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
-            Three lenses on what we do, why gastroenterology, and how we hold
-            ourselves to a pharma-grade quality bar.
+          <p className="section-subhead">
+            The science behind our products, our focus on gastrointestinal
+            health, and the quality standards we maintain.
           </p>
         </Reveal>
 
@@ -118,7 +116,6 @@ export function Science() {
             aria-labelledby={`science-tab-${current.key}`}
             className="md:col-span-8"
           >
-            {/* key={current.key} forces a remount → CSS animation replays on tab change */}
             <article
               key={current.key}
               className="animate-fade-in-up bg-teal-50 p-8 ring-1 ring-teal-100 md:p-10"

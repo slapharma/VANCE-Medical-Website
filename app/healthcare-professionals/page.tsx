@@ -23,7 +23,7 @@ export default function HCPPage() {
         {/* Hero — photographic, mirrors components/sections/Hero.tsx structure
             with a stronger overlay so this page reads as a calmer, more
             clinical destination than the home page. */}
-        <section className="relative h-[60vh] min-h-[460px] max-h-[640px] w-full overflow-hidden">
+        <section className="hcp-hero-section">
           <Image
             src="/hero-gi.jpg"
             alt=""
@@ -38,30 +38,22 @@ export default function HCPPage() {
           <div className="relative flex h-full items-center">
             <div className="container-x">
               <div className="max-w-2xl animate-fade-in-up">
-                <p className="mb-5 inline-block border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
-                  For healthcare professionals
-                </p>
-                <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white drop-shadow-lg sm:text-5xl md:text-6xl">
+                <p className="hero-pretitle">For healthcare professionals</p>
+                <h1 className="homepage-hero-title">
                   <span className="block text-teal-300">Clinical resources</span>
                   <span className="block text-white">for medical foods in GI health.</span>
                 </h1>
-                <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90 drop-shadow md:text-lg">
+                <p className="hero-subhead">
                   These pages are intended for UK clinicians, pharmacists and
-                  other healthcare professionals — pipeline detail, the
+                  other healthcare professionals: pipeline detail, the
                   regulatory category, and direct lines to our medical-information team.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <a
-                    href="#pipeline"
-                    className="inline-flex items-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 shadow-card transition-colors hover:bg-teal-100"
-                  >
+                  <a href="#pipeline" className="hero-cta-primary">
                     View pipeline
                     <span aria-hidden className="ml-2">→</span>
                   </a>
-                  <a
-                    href="#hcp-contact"
-                    className="inline-flex items-center border border-white/60 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20"
-                  >
+                  <a href="#hcp-contact" className="hero-cta-outline">
                     Request information
                   </a>
                 </div>
@@ -85,24 +77,29 @@ export default function HCPPage() {
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               <div className="flex flex-col border border-teal-100 bg-teal-50 p-7">
-                <span className="inline-flex w-max bg-teal-700 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
-                  Coming soon
-                </span>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
-                  Omega-3 (EPA) medical food
+                <p className="programme-pretitle">
+                  <span className="programme-pretitle-num">Programme 1</span>
+                  <span aria-hidden className="programme-pretitle-num">|</span>
+                  <span className="programme-pretitle-status-soon">Coming Soon</span>
                 </p>
-                <h3 className="mt-1 text-2xl font-bold tracking-tight text-teal-900">
-                  Inflammatory bowel disease
+                <h3 className="text-2xl font-bold tracking-tight text-teal-900">
+                  Inflammatory Bowel Disease
                 </h3>
                 <p className="mt-3 text-sm text-teal-900/80">
-                  Highly purified eicosapentaenoic acid (EPA) formulation,
-                  designed for daily long-term use under medical supervision.
-                  Detailed clinical specification available on request.
+                  A medical food providing a clinically relevant dose of a
+                  highly purified active ingredient, formulated for the dietary
+                  management of inflammatory bowel disease (IBD) under medical
+                  supervision.
                 </p>
+                <ul className="mt-4 space-y-2">
+                  <ProgrammeBullet>Highly purified formulation</ProgrammeBullet>
+                  <ProgrammeBullet>Designed for daily, long-term use</ProgrammeBullet>
+                  <ProgrammeBullet>For use under medical supervision</ProgrammeBullet>
+                </ul>
                 <div className="mt-6">
                   <a
                     href="?product=epa-ibd#hcp-contact"
-                    className="inline-flex items-center bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
+                    className="cta-teal-sm"
                   >
                     Request product details
                     <span aria-hidden className="ml-2">→</span>
@@ -110,24 +107,29 @@ export default function HCPPage() {
                 </div>
               </div>
               <div className="flex flex-col border border-teal-100 bg-white p-7">
-                <span className="inline-flex w-max border border-teal-700 bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-teal-700">
-                  In development
-                </span>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
-                  Butyrate capsule
+                <p className="programme-pretitle">
+                  <span className="programme-pretitle-num">Programme 2</span>
+                  <span aria-hidden className="programme-pretitle-num">|</span>
+                  <span className="programme-pretitle-status-dev">In Development</span>
                 </p>
-                <h3 className="mt-1 text-2xl font-bold tracking-tight text-teal-900">
-                  Irritable bowel syndrome
+                <h3 className="text-2xl font-bold tracking-tight text-teal-900">
+                  Irritable Bowel Syndrome
                 </h3>
                 <p className="mt-3 text-sm text-teal-900/80">
-                  Butyrate capsule for the dietary management of irritable
-                  bowel syndrome, addressing conditions where butyrate
-                  availability is a therapeutic target.
+                  A forthcoming medical food designed to deliver a key
+                  gut-health compound with a well-established role in
+                  gastrointestinal function, developed for the dietary
+                  management of irritable bowel syndrome (IBS).
                 </p>
+                <ul className="mt-4 space-y-2">
+                  <ProgrammeBullet>Targeted at IBS dietary management</ProgrammeBullet>
+                  <ProgrammeBullet>Convenient oral capsule format</ProgrammeBullet>
+                  <ProgrammeBullet>For use under medical supervision</ProgrammeBullet>
+                </ul>
                 <div className="mt-6">
                   <a
                     href="?product=butyrate-ibs#hcp-contact"
-                    className="inline-flex items-center bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
+                    className="cta-teal-sm"
                   >
                     Request product details
                     <span aria-hidden className="ml-2">→</span>
@@ -190,7 +192,8 @@ export default function HCPPage() {
                 <span aria-hidden className="ml-2">→</span>
               </a>
               <span className="text-sm text-teal-900/70">
-                We'll route your enquiry to the right team within two working days.
+                Your contact request will be received, a member of our team
+                will contact you shortly.
               </span>
             </Reveal>
           </div>
@@ -371,6 +374,18 @@ export default function HCPPage() {
       </main>
       <Footer />
     </>
+  );
+}
+
+function ProgrammeBullet({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-3 text-sm text-teal-900/80">
+      <span
+        aria-hidden
+        className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 bg-teal-700"
+      />
+      {children}
+    </li>
   );
 }
 

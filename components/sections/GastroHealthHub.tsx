@@ -11,14 +11,12 @@ export function GastroHealthHub() {
   return (
     <section
       id="gastrohealthhub"
-      className="relative overflow-hidden bg-teal-50 py-20 md:py-28"
+      className="section-pad relative overflow-hidden bg-teal-50"
     >
       <div className="container-x grid items-center gap-12 md:grid-cols-12">
         <Reveal className="md:col-span-6">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
-            Community · Free to access
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
+          <p className="section-pretitle">Community · Free to access</p>
+          <h2 className="section-title">
             GastroHealthHub: knowledge for patients and practitioners.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
@@ -32,8 +30,8 @@ export function GastroHealthHub() {
               GastroHealthHub.com
             </a>
             , a free, open knowledge platform for people living with
-            inflammatory bowel disease (IBD) and associated gastrointestinal
-            conditions, and for the clinicians who care for them.
+            gastrointestinal conditions, and for the clinicians who care for
+            them.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-teal-900/80">
             The Hub brings together patient-friendly explainers, the latest
@@ -54,7 +52,7 @@ export function GastroHealthHub() {
               href="https://www.gastrohealthhub.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
+              className="cta-teal"
             >
               Visit GastroHealthHub.com
               <span aria-hidden className="ml-2">

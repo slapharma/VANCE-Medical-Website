@@ -5,7 +5,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-teal-900 py-20 text-white md:py-28"
+      className="section-pad relative overflow-hidden bg-teal-900 text-white"
     >
       <div
         aria-hidden
@@ -17,10 +17,8 @@ export function Contact() {
       />
       <div className="container-x relative grid gap-12 md:grid-cols-12">
         <Reveal className="md:col-span-5">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-300">
-            Get in touch
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+          <p className="section-pretitle-on-dark">Get in touch</p>
+          <h2 className="section-title-on-dark">
             For healthcare professionals and partners.
           </h2>
           <p className="mt-5 max-w-lg text-lg text-teal-100">

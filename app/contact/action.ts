@@ -36,7 +36,7 @@ const ROLE_LABEL: Record<Role, string> = {
 };
 
 const SUCCESS_MESSAGE =
-  "Thanks. Your message is with our team and we typically reply within two working days.";
+  "Your contact request has been received, a member of our team will contact you shortly.";
 
 export async function submitContact(
   _prev: ContactSubmitState,

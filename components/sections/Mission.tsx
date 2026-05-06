@@ -82,7 +82,7 @@ export function Mission() {
   return (
     <section
       id="mission"
-      className="relative overflow-hidden bg-teal-900 py-20 text-white md:py-28"
+      className="section-pad relative overflow-hidden bg-teal-900 text-white"
     >
       {/* Decorative ring + gradient */}
       <div
@@ -101,13 +101,11 @@ export function Mission() {
 
       <div className="container-x relative">
         <Reveal className="max-w-3xl">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-teal-300">
-            Our mission
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+          <p className="section-pretitle-on-dark">Our mission</p>
+          <h2 className="section-title-on-dark">
             Bridging science &amp; patient wellbeing.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-teal-100/90">
+          <p className="section-subhead-on-dark">
             At Vance Medical, our mission is to empower patients living with
             chronic gastrointestinal conditions by making world-class clinical
             nutrition science accessible, actionable and personal.
