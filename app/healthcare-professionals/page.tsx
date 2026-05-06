@@ -346,7 +346,7 @@ export default function HCPPage() {
         </section>
 
         {/* Regulatory note */}
-        <section className="bg-white py-16 md:py-20">
+        <section id="regulatory" className="bg-white py-16 md:py-20">
           <div className="container-x max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-teal-900">
               Regulatory category
