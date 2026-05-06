@@ -14,3 +14,4 @@ vance-*.md
 
 # Personal Claude Code overrides (permissions, local-only settings)
 .claude/settings.local.json
+/favicon.png
