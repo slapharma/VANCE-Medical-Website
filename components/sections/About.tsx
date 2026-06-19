@@ -13,18 +13,9 @@ export function About() {
         </Reveal>
         <Reveal delay={120} className="md:col-span-7">
           <p className="text-lg leading-relaxed text-teal-900/80">
-            Vance Medical Foods is the medical foods division of the{" "}
-            <a
-              href="https://www.slapharma.com"
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-900"
-            >
-              SLA Pharma group
-            </a>
-            , drawing on more than 30 years of specialist gastrointestinal
-            treatment development in partnership with leading clinicians and
-            academic centres.
+            Vance Medical Foods Ltd draws on more than 30 years of specialist
+            gastrointestinal treatment development in partnership with leading
+            clinicians and academic centres.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
             We apply that same clinical rigour to a different therapeutic
@@ -36,7 +27,7 @@ export function About() {
 
           <dl className="mt-12 grid grid-cols-2 divide-y divide-teal-100 border-y border-teal-100 sm:grid-cols-4 sm:divide-x sm:divide-y-0">
             <Fact title="30+ years" body="Gastroenterology heritage" />
-            <Fact title="UK based" body="SLA Pharma group" />
+            <Fact title="UK based" body="UK registered company" />
             <Fact title="FSMP" body="Regulated medical foods" />
             <Fact title="Clinician-led" body="Under medical supervision" />
           </dl>

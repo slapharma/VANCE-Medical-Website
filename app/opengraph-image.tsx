@@ -108,7 +108,7 @@ export default function OG() {
             paddingTop: 28,
           }}
         >
-          <span>Part of the SLA Pharma group</span>
+          <span>Vance Medical Foods Ltd</span>
           <span style={{ color: "#AEDBDB" }}>vancemedical.co.uk</span>
         </div>
       </div>

@@ -48,16 +48,6 @@ export function Contact() {
                 Vance Medical Foods Ltd, United Kingdom
               </span>
             </Row>
-            <Row label="Group">
-              <a
-                href="https://www.slapharma.com"
-                target="_blank"
-                rel="noreferrer"
-                className="font-semibold text-white underline decoration-teal-300 underline-offset-4 hover:text-teal-100"
-              >
-                Part of the SLA Pharma group
-              </a>
-            </Row>
           </dl>
         </Reveal>
 

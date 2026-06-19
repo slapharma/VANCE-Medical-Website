@@ -7,7 +7,7 @@ const SITE_NAME = "Vance Medical Foods";
 const SITE_TITLE =
   "Vance Medical Foods | Medical Foods for Gastrointestinal Health";
 const SITE_DESC =
-  "Vance Medical Foods Ltd develops medical foods for the dietary management of gastrointestinal conditions, with an indication-led pipeline targeting inflammatory bowel disease (IBD) and irritable bowel syndrome (IBS). Part of the SLA Pharma group.";
+  "Vance Medical Foods Ltd develops medical foods for the dietary management of gastrointestinal conditions, with an indication-led pipeline targeting inflammatory bowel disease (IBD) and irritable bowel syndrome (IBS).";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -43,11 +43,6 @@ const orgJsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   description: SITE_DESC,
-  parentOrganization: {
-    "@type": "Organization",
-    name: "SLA Pharma",
-    url: "https://www.slapharma.com",
-  },
   contactPoint: [
     {
       "@type": "ContactPoint",

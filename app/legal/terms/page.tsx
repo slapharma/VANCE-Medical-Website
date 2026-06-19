@@ -17,10 +17,9 @@ export default function TermsPage() {
     >
       <h2>About this site</h2>
       <p>
-        vancemedical.co.uk is operated by Vance Medical Foods Ltd, part of the
-        SLA Pharma group. The site is provided for informational purposes
-        about our company and the medical foods (Foods for Special Medical
-        Purposes) we develop.
+        vancemedical.co.uk is operated by Vance Medical Foods Ltd. The site is
+        provided for informational purposes about our company and the medical
+        foods (Foods for Special Medical Purposes) we develop.
       </p>
 
       <h2>Not medical advice</h2>
@@ -46,19 +45,11 @@ export default function TermsPage() {
       <p>
         The site links to third-party resources, including{" "}
         <a
-          href="https://www.gastrohealthhub.com"
+          href="https://www.vancehealthhub.co.uk"
           target="_blank"
           rel="noreferrer"
         >
-          GastroHealthHub.com
-        </a>{" "}
-        and{" "}
-        <a
-          href="https://www.slapharma.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          slapharma.com
+          VanceHealthHub.co.uk
         </a>
         . We are not responsible for the content of external sites and
         inclusion of a link does not imply endorsement.

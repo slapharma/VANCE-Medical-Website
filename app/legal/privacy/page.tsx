@@ -17,8 +17,8 @@ export default function PrivacyPage() {
     >
       <h2>Who we are</h2>
       <p>
-        Vance Medical Foods Ltd is a company registered in England and Wales,
-        part of the SLA Pharma group. You can contact us at{" "}
+        Vance Medical Foods Ltd is a company registered in England and Wales.
+        You can contact us at{" "}
         <a href="mailto:contact@vancemedical.co.uk">contact@vancemedical.co.uk</a> for
         general queries, or{" "}
         <a href="mailto:medical@vancemedical.co.uk">

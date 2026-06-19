@@ -199,25 +199,25 @@ export default function HCPPage() {
           </div>
         </section>
 
-        {/* Collaborate on GastroHealthHub */}
-        <section id="gastrohealthhub-collab" className="bg-white py-20 md:py-28">
+        {/* Collaborate on VanceHealthHub */}
+        <section id="vancehealthhub-collab" className="bg-white py-20 md:py-28">
           <div className="container-x grid items-start gap-12 md:grid-cols-12">
             <Reveal className="md:col-span-6">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
                 Community partnership
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
-                Collaborate with us on GastroHealthHub.
+                Collaborate with us on VanceHealthHub.
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
                 Vance Medical proudly supports{" "}
                 <a
-                  href="https://www.gastrohealthhub.com"
+                  href="https://www.vancehealthhub.co.uk"
                   target="_blank"
                   rel="noreferrer"
                   className="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-900"
                 >
-                  GastroHealthHub.com
+                  VanceHealthHub.co.uk
                 </a>
                 , a free, open knowledge platform for people living with IBD,
                 IBS and related GI conditions, and for the clinicians who care
@@ -230,12 +230,12 @@ export default function HCPPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="https://www.gastrohealthhub.com"
+                  href="https://www.vancehealthhub.co.uk"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900"
                 >
-                  Visit GastroHealthHub.com
+                  Visit VanceHealthHub.co.uk
                   <span aria-hidden className="ml-2">→</span>
                 </a>
                 <a
@@ -314,16 +314,6 @@ export default function HCPPage() {
                   <span className="text-teal-100">
                     Vance Medical Foods Ltd, United Kingdom
                   </span>
-                </Row>
-                <Row label="Group">
-                  <a
-                    href="https://www.slapharma.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-semibold text-white underline decoration-teal-300 underline-offset-4 hover:text-teal-100"
-                  >
-                    Part of the SLA Pharma group
-                  </a>
                 </Row>
               </dl>
             </Reveal>
@@ -461,7 +451,7 @@ const pillars = [
   {
     label: "Education",
     body:
-      "Co-author HCP education materials, or guest-author and peer-review patient-facing content on GastroHealthHub.",
+      "Co-author HCP education materials, or guest-author and peer-review patient-facing content on VanceHealthHub.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -480,7 +470,7 @@ const pillars = [
   {
     label: "Patient & caregiver support",
     body:
-      "Refer patients to GastroHealthHub resources, or contribute to the support-group and lived-experience content base.",
+      "Refer patients to VanceHealthHub resources, or contribute to the support-group and lived-experience content base.",
     icon: (
       <svg
         viewBox="0 0 24 24"

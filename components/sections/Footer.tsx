@@ -6,7 +6,7 @@ const siteLinks = [
   { href: "/#about", label: "About" },
   { href: "/#products", label: "Products" },
   { href: "/#science", label: "Science" },
-  { href: "/#gastrohealthhub", label: "GastroHealthHub" },
+  { href: "/#vancehealthhub", label: "VanceHealthHub" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -35,18 +35,6 @@ export function Footer() {
               Medical Purposes) for the dietary management of gastrointestinal
               conditions, used under medical supervision.
             </p>
-            <p className="mt-4 text-xs text-teal-900/60">
-              Part of the{" "}
-              <a
-                href="https://www.slapharma.com"
-                target="_blank"
-                rel="noreferrer"
-                className="underline decoration-teal-300 underline-offset-4 hover:text-teal-900"
-              >
-                SLA Pharma group
-              </a>
-              .
-            </p>
           </div>
 
           <div className="md:col-span-3">
@@ -64,14 +52,6 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="/healthcare-professionals"
-                  className="transition-colors hover:text-teal-700"
-                >
-                  Healthcare professionals
-                </a>
-              </li>
             </ul>
           </div>
 

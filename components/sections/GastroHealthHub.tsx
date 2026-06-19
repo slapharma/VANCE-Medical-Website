@@ -10,24 +10,24 @@ import { Reveal } from "@/components/ui/Reveal";
 export function GastroHealthHub() {
   return (
     <section
-      id="gastrohealthhub"
+      id="vancehealthhub"
       className="section-pad relative overflow-hidden bg-teal-50"
     >
       <div className="container-x grid items-center gap-12 md:grid-cols-12">
         <Reveal className="md:col-span-6">
           <p className="section-pretitle">Community · Free to access</p>
           <h2 className="section-title">
-            GastroHealthHub: knowledge for patients and practitioners.
+            VanceHealthHub: knowledge for patients and practitioners.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
             Vance Medical proudly supports{" "}
             <a
-              href="https://www.gastrohealthhub.com"
+              href="https://www.vancehealthhub.co.uk"
               target="_blank"
               rel="noreferrer"
               className="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-900"
             >
-              GastroHealthHub.com
+              VanceHealthHub.co.uk
             </a>
             , a free, open knowledge platform for people living with
             gastrointestinal conditions, and for the clinicians who care for
@@ -49,12 +49,12 @@ export function GastroHealthHub() {
 
           <div className="mt-8">
             <a
-              href="https://www.gastrohealthhub.com"
+              href="https://www.vancehealthhub.co.uk"
               target="_blank"
               rel="noreferrer"
               className="cta-teal"
             >
-              Visit GastroHealthHub.com
+              Visit VanceHealthHub.co.uk
               <span aria-hidden className="ml-2">
                 →
               </span>
@@ -75,7 +75,7 @@ export function GastroHealthHub() {
                     <span aria-hidden className="h-2.5 w-2.5 bg-teal-700" />
                   </div>
                   <span className="text-xs font-semibold text-teal-700">
-                    gastrohealthhub.com
+                    vancehealthhub.co.uk
                   </span>
                 </div>
                 {/* Scrollable preview window */}
@@ -83,7 +83,7 @@ export function GastroHealthHub() {
                   <div className="absolute inset-x-0 top-0 animate-ghh-scroll">
                     <Image
                       src="/gastrohealthhub-screenshot.png"
-                      alt="Preview of the GastroHealthHub website, scrolling through hero, featured content, content discovery and articles sections."
+                      alt="Preview of the VanceHealthHub website, scrolling through hero, featured content, content discovery and articles sections."
                       width={1688}
                       height={4472}
                       sizes="(min-width: 768px) 50vw, 100vw"

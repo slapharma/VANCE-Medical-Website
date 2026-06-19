@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
-import { HCPModal, hasHCPAck } from "@/components/ui/HCPModal";
 
 type NavItem = { href: string; label: string };
 
@@ -13,7 +12,7 @@ const HOME_NAV: NavItem[] = [
   { href: "/#about", label: "About" },
   { href: "/#products", label: "Pipeline" },
   { href: "/#science", label: "Science" },
-  { href: "/#gastrohealthhub", label: "GastroHealthHub" },
+  { href: "/#vancehealthhub", label: "VanceHealthHub" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -22,33 +21,18 @@ const HOME_NAV: NavItem[] = [
 const HCP_NAV: NavItem[] = [
   { href: "#pipeline", label: "Pipeline" },
   { href: "#join-us", label: "Partner with us" },
-  { href: "#gastrohealthhub-collab", label: "GastroHealthHub" },
+  { href: "#vancehealthhub-collab", label: "VanceHealthHub" },
   { href: "#regulatory", label: "Regulatory" },
   { href: "#hcp-contact", label: "Contact" },
 ];
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [hcpOpen, setHcpOpen] = useState(false);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
 
-  // usePathname is a hook from next/navigation that returns the current route
-  // (App Router). On /healthcare-professionals we swap the nav items for
-  // page-local anchors and hide the redundant "Healthcare professionals" CTA.
   const pathname = usePathname() ?? "/";
   const onHCP = pathname === "/healthcare-professionals";
   const nav: NavItem[] = onHCP ? HCP_NAV : HOME_NAV;
-
-  /** Soft HCP gate: skip modal if already acknowledged this device. */
-  const handleHcpClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setOpen(false); // close mobile drawer if open
-    if (hasHCPAck()) {
-      window.location.href = "/healthcare-professionals";
-      return;
-    }
-    setHcpOpen(true);
-  };
 
   /** Logo click: from `/` we scroll-to-top; from any other page we navigate
    * home (Link handles the navigation). */
@@ -110,17 +94,6 @@ export function Header() {
                   </a>
                 </li>
               ))}
-              {!onHCP && (
-                <li>
-                  <a
-                    href="/healthcare-professionals"
-                    onClick={handleHcpClick}
-                    className="inline-flex items-center bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-900"
-                  >
-                    Healthcare professionals
-                  </a>
-                </li>
-              )}
             </ul>
           </nav>
 
@@ -183,19 +156,9 @@ export function Header() {
               </li>
             ))}
           </ul>
-          {!onHCP && (
-            <a
-              href="/healthcare-professionals"
-              onClick={handleHcpClick}
-              className="mt-12 inline-flex w-full items-center justify-center bg-teal-700 px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-teal-900"
-            >
-              Healthcare professionals
-            </a>
-          )}
         </nav>
       </div>
 
-      <HCPModal open={hcpOpen} onClose={() => setHcpOpen(false)} />
     </>
   );
 }

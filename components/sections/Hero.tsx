@@ -34,8 +34,8 @@ export function Hero() {
                 Explore our pipeline
                 <span aria-hidden className="ml-2">→</span>
               </a>
-              <a href="#gastrohealthhub" className="hero-cta-outline">
-                Visit GastroHealthHub
+              <a href="#vancehealthhub" className="hero-cta-outline">
+                Visit VanceHealthHub
               </a>
             </div>
           </div>
