@@ -35,7 +35,7 @@ export function Hero() {
                 <span aria-hidden className="ml-2">→</span>
               </a>
               <a href="#vancehealthhub" className="hero-cta-outline">
-                Visit VanceHealthHub
+                See our Health Hub
               </a>
             </div>
           </div>
