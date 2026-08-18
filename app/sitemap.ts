@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://www.vancemedical.co.uk";
+const BASE = "https://www.vancemedicalfoods.co.uk";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

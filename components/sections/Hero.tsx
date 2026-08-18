@@ -25,7 +25,7 @@ export function Hero() {
               <span className="block text-white">for gastrointestinal health.</span>
             </h1>
             <p className="hero-subhead">
-              Vance Medical develops medical foods for the dietary management
+              Vance Medical Foods develops medical foods for the dietary management
               of gastrointestinal conditions, bridging the worlds of
               pharmaceutical science and medical nutrition.
             </p>

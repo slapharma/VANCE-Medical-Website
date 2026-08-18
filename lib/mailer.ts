@@ -7,7 +7,7 @@ import nodemailer, { type Transporter } from "nodemailer";
  * Configure these env vars on Vercel (Project → Settings → Env Variables,
  * Production + Preview):
  *
- *   GMAIL_USER            sending account, e.g. contact@vancemedical.co.uk
+ *   GMAIL_USER            sending account, e.g. contact@vancemedicalfoods.co.uk
  *   GMAIL_APP_PASSWORD    16-char App Password from
  *                         https://myaccount.google.com/apppasswords
  *                         (requires 2-Step Verification on the account first)
@@ -57,7 +57,7 @@ export function getFromAddress(): string {
   return (
     process.env.GMAIL_FROM ??
     process.env.GMAIL_USER ??
-    "contact@vancemedical.co.uk"
+    "contact@vancemedicalfoods.co.uk"
   );
 }
 
@@ -65,7 +65,7 @@ export function getContactTo(): string {
   return (
     process.env.CONTACT_TO ??
     process.env.GMAIL_USER ??
-    "contact@vancemedical.co.uk"
+    "contact@vancemedicalfoods.co.uk"
   );
 }
 
@@ -73,7 +73,7 @@ export function getNewsletterTo(): string {
   return (
     process.env.NEWSLETTER_TO ??
     process.env.GMAIL_USER ??
-    "contact@vancemedical.co.uk"
+    "contact@vancemedicalfoods.co.uk"
   );
 }
 

@@ -1,6 +1,6 @@
 # Vance Medical — Website
 
-Single-page marketing site for Vance Medical (vancemedical.co.uk). Sister company to SLA Pharma, specialising in medical foods (FSMP) for gastrointestinal health.
+Single-page marketing site for Vance Medical (vancemedicalfoods.co.uk). Sister company to SLA Pharma, specialising in medical foods (FSMP) for gastrointestinal health.
 
 ## Stack
 - Next.js 14 (App Router) + TypeScript

@@ -20,7 +20,7 @@ export function GastroHealthHub() {
             VanceHealthHub: knowledge for patients and practitioners.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-teal-900/80">
-            Vance Medical proudly supports{" "}
+            Vance Medical Foods proudly supports{" "}
             <a
               href="https://www.vancehealthhub.co.uk"
               target="_blank"

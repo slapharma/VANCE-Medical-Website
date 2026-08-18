@@ -4,7 +4,7 @@ import { LegalShell } from "@/components/legal/LegalShell";
 export const metadata: Metadata = {
   title: "Privacy notice | Vance Medical Foods",
   description:
-    "How Vance Medical Foods Ltd collects, uses and protects personal data submitted via vancemedical.co.uk.",
+    "How Vance Medical Foods Ltd collects, uses and protects personal data submitted via vancemedicalfoods.co.uk.",
   alternates: { canonical: "/legal/privacy" },
 };
 
@@ -13,16 +13,16 @@ export default function PrivacyPage() {
     <LegalShell
       title="Privacy notice"
       lastUpdated="5 May 2026"
-      intro={`This notice explains how Vance Medical Foods Ltd (“Vance Medical”, “we”, “us”) collects and processes your personal data when you use vancemedical.co.uk or contact us through the site. We are the data controller for the data described below.`}
+      intro={`This notice explains how Vance Medical Foods Ltd (“Vance Medical”, “we”, “us”) collects and processes your personal data when you use vancemedicalfoods.co.uk or contact us through the site. We are the data controller for the data described below.`}
     >
       <h2>Who we are</h2>
       <p>
         Vance Medical Foods Ltd is a company registered in England and Wales.
         You can contact us at{" "}
-        <a href="mailto:contact@vancemedical.co.uk">contact@vancemedical.co.uk</a> for
+        <a href="mailto:contact@vancemedicalfoods.co.uk">contact@vancemedicalfoods.co.uk</a> for
         general queries, or{" "}
-        <a href="mailto:medical@vancemedical.co.uk">
-          medical@vancemedical.co.uk
+        <a href="mailto:medical@vancemedicalfoods.co.uk">
+          medical@vancemedicalfoods.co.uk
         </a>{" "}
         for medical information enquiries.
       </p>
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
       </ul>
       <p>
         Email{" "}
-        <a href="mailto:contact@vancemedical.co.uk">contact@vancemedical.co.uk</a> to
+        <a href="mailto:contact@vancemedicalfoods.co.uk">contact@vancemedicalfoods.co.uk</a> to
         exercise any of these rights.
       </p>
 

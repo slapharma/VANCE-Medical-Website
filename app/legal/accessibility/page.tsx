@@ -4,7 +4,7 @@ import { LegalShell } from "@/components/legal/LegalShell";
 export const metadata: Metadata = {
   title: "Accessibility statement | Vance Medical Foods",
   description:
-    "Vance Medical Foods accessibility statement. We aim to meet WCAG 2.1 AA across vancemedical.co.uk.",
+    "Vance Medical Foods accessibility statement. We aim to meet WCAG 2.1 AA across vancemedicalfoods.co.uk.",
   alternates: { canonical: "/legal/accessibility" },
 };
 
@@ -13,7 +13,7 @@ export default function AccessibilityPage() {
     <LegalShell
       title="Accessibility statement"
       lastUpdated="5 May 2026"
-      intro="Vance Medical Foods is committed to making vancemedical.co.uk usable for as many people as possible. This statement describes how we approach accessibility, known limitations, and how to report issues."
+      intro="Vance Medical Foods is committed to making vancemedicalfoods.co.uk usable for as many people as possible. This statement describes how we approach accessibility, known limitations, and how to report issues."
     >
       <h2>Standards we aim for</h2>
       <p>
@@ -77,7 +77,7 @@ export default function AccessibilityPage() {
       <h2>Reporting an issue</h2>
       <p>
         If you find any part of the site difficult to use, please contact us at{" "}
-        <a href="mailto:contact@vancemedical.co.uk">contact@vancemedical.co.uk</a>.
+        <a href="mailto:contact@vancemedicalfoods.co.uk">contact@vancemedicalfoods.co.uk</a>.
         We aim to respond within five working days and to fix substantial
         issues within four weeks.
       </p>

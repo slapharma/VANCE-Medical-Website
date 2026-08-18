@@ -296,18 +296,18 @@ export default function HCPPage() {
               <dl className="mt-10 space-y-5">
                 <Row label="Medical info">
                   <a
-                    href="mailto:medical@vancemedical.co.uk"
+                    href="mailto:medical@vancemedicalfoods.co.uk"
                     className="font-semibold text-white underline decoration-teal-300 underline-offset-4 hover:text-teal-100"
                   >
-                    medical@vancemedical.co.uk
+                    medical@vancemedicalfoods.co.uk
                   </a>
                 </Row>
                 <Row label="General">
                   <a
-                    href="mailto:contact@vancemedical.co.uk"
+                    href="mailto:contact@vancemedicalfoods.co.uk"
                     className="font-semibold text-white underline decoration-teal-300 underline-offset-4 hover:text-teal-100"
                   >
-                    contact@vancemedical.co.uk
+                    contact@vancemedicalfoods.co.uk
                   </a>
                 </Row>
                 <Row label="Address">
@@ -387,11 +387,11 @@ function Row({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid grid-cols-[140px_1fr] items-baseline gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
+    <div className="grid grid-cols-1 gap-1 border-b border-white/10 pb-4 last:border-0 last:pb-0 lg:grid-cols-[140px_minmax(0,1fr)] lg:items-baseline lg:gap-4">
       <dt className="text-xs font-semibold uppercase tracking-wider text-teal-300">
         {label}
       </dt>
-      <dd className="text-base">{children}</dd>
+      <dd className="break-words text-base">{children}</dd>
     </div>
   );
 }

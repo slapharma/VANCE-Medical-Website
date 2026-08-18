@@ -4,7 +4,7 @@ import { LegalShell } from "@/components/legal/LegalShell";
 export const metadata: Metadata = {
   title: "Cookies | Vance Medical Foods",
   description:
-    "How vancemedical.co.uk uses cookies. We do not currently use any analytics or advertising cookies.",
+    "How vancemedicalfoods.co.uk uses cookies. We do not currently use any analytics or advertising cookies.",
   alternates: { canonical: "/legal/cookies" },
 };
 
@@ -13,7 +13,7 @@ export default function CookiesPage() {
     <LegalShell
       title="Cookies notice"
       lastUpdated="5 May 2026"
-      intro="vancemedical.co.uk does not currently set analytics, profiling or advertising cookies. This page explains the limited cookies that may be set as part of basic site operation."
+      intro="vancemedicalfoods.co.uk does not currently set analytics, profiling or advertising cookies. This page explains the limited cookies that may be set as part of basic site operation."
     >
       <h2>Cookies we use today</h2>
       <p>
@@ -47,7 +47,7 @@ export default function CookiesPage() {
       <h2>Questions</h2>
       <p>
         Email{" "}
-        <a href="mailto:contact@vancemedical.co.uk">contact@vancemedical.co.uk</a>{" "}
+        <a href="mailto:contact@vancemedicalfoods.co.uk">contact@vancemedicalfoods.co.uk</a>{" "}
         with any questions about how the site uses cookies.
       </p>
     </LegalShell>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 
-const SITE_URL = "https://www.vancemedical.co.uk";
+const SITE_URL = "https://www.vancemedicalfoods.co.uk";
 const SITE_NAME = "Vance Medical Foods";
 const SITE_TITLE =
   "Vance Medical Foods | Medical Foods for Gastrointestinal Health";
@@ -47,13 +47,13 @@ const orgJsonLd = {
     {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "contact@vancemedical.co.uk",
+      email: "contact@vancemedicalfoods.co.uk",
       availableLanguage: ["English"],
     },
     {
       "@type": "ContactPoint",
       contactType: "medical information",
-      email: "medical@vancemedical.co.uk",
+      email: "medical@vancemedicalfoods.co.uk",
       availableLanguage: ["English"],
     },
   ],

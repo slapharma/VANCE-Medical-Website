@@ -4,7 +4,7 @@ import { LegalShell } from "@/components/legal/LegalShell";
 export const metadata: Metadata = {
   title: "Terms of use | Vance Medical Foods",
   description:
-    "Terms of use for vancemedical.co.uk, the website of Vance Medical Foods Ltd.",
+    "Terms of use for vancemedicalfoods.co.uk, the website of Vance Medical Foods Ltd.",
   alternates: { canonical: "/legal/terms" },
 };
 
@@ -13,11 +13,11 @@ export default function TermsPage() {
     <LegalShell
       title="Terms of use"
       lastUpdated="5 May 2026"
-      intro="These terms govern your use of vancemedical.co.uk. By accessing the site you agree to them. If you do not agree, please do not use the site."
+      intro="These terms govern your use of vancemedicalfoods.co.uk. By accessing the site you agree to them. If you do not agree, please do not use the site."
     >
       <h2>About this site</h2>
       <p>
-        vancemedical.co.uk is operated by Vance Medical Foods Ltd. The site is
+        vancemedicalfoods.co.uk is operated by Vance Medical Foods Ltd. The site is
         provided for informational purposes about our company and the medical
         foods (Foods for Special Medical Purposes) we develop.
       </p>

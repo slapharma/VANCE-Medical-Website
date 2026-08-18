@@ -74,7 +74,7 @@ export function Header() {
         <div className="container-x flex h-20 items-center justify-between md:h-28">
           <Link
             href="/"
-            aria-label="Vance Medical — home"
+            aria-label="Vance Medical Foods — home"
             onClick={handleLogoClick}
             className="-my-1 block"
           >

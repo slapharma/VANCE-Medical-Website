@@ -25,7 +25,7 @@ export function Footer() {
           <div className="md:col-span-5">
             <Link
               href="/"
-              aria-label="Vance Medical — home"
+              aria-label="Vance Medical Foods — home"
               className="-my-1 inline-block"
             >
               <Logo />

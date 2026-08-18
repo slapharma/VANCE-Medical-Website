@@ -109,7 +109,7 @@ export default function OG() {
           }}
         >
           <span>Vance Medical Foods Ltd</span>
-          <span style={{ color: "#AEDBDB" }}>vancemedical.co.uk</span>
+          <span style={{ color: "#AEDBDB" }}>vancemedicalfoods.co.uk</span>
         </div>
       </div>
     ),

@@ -60,7 +60,7 @@ const pillars = [
   {
     label: "Global",
     body:
-      "With a regulatory footprint spanning multiple continents, Vance Medical delivers consistent, trusted solutions wherever patients and clinicians need them.",
+      "With a regulatory footprint spanning multiple continents, Vance Medical Foods delivers consistent, trusted solutions wherever patients and clinicians need them.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -106,7 +106,7 @@ export function Mission() {
             Bridging science &amp; patient wellbeing.
           </h2>
           <p className="section-subhead-on-dark">
-            At Vance Medical, our mission is to empower patients living with
+            At Vance Medical Foods, our mission is to empower patients living with
             chronic gastrointestinal conditions by making world-class clinical
             nutrition science accessible, actionable and personal.
           </p>
