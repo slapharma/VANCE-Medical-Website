@@ -15,6 +15,12 @@ permissions:
   contents: read
   pull-requests: write
 
+# Supersede in-flight runs for the same ref rather than letting duplicates
+# (or rapid successive pushes) burn runner minutes in parallel.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   static:
     name: Lint & typecheck
