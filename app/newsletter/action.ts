@@ -1,6 +1,7 @@
 "use server";
 
 import {
+  escapeHtml,
   getFromAddress,
   getMailer,
   getNewsletterTo,
@@ -77,8 +78,8 @@ export async function subscribeNewsletter(
       html:
         `<p style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#0B2B2B;line-height:1.6">` +
         `New newsletter subscriber:</p>` +
-        `<p style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:18px;color:#004D4D"><strong>${email.replace(/[<>&"']/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;", "'": "&#39;" }[c]!))}</strong></p>` +
-        `<p style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#0B2B2B/80;font-size:13px">` +
+        `<p style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:18px;color:#004D4D"><strong>${escapeHtml(email)}</strong></p>` +
+        `<p style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#0B2B2B;font-size:13px">` +
         `Submitted ${submission.timestamp}.<br>` +
         `Add this address to whichever audience tool currently holds the broadcast list.</p>`,
     });

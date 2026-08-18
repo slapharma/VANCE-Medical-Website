@@ -16,3 +16,6 @@ hcp-*.png
 # Personal Claude Code overrides (permissions, local-only settings)
 .claude/settings.local.json
 /favicon.png
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
