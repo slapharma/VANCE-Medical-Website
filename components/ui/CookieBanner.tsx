@@ -70,14 +70,14 @@ export function CookieBanner() {
             analytics, advertising or cross-site tracking. See our{" "}
             <a
               href="/legal/cookies"
-              className="font-semibold underline decoration-teal-300 underline-offset-4 hover:text-white"
+              className="focus-ring-on-dark inline-block py-1 font-semibold underline decoration-teal-300 underline-offset-4 hover:text-white"
             >
               cookie notice
             </a>{" "}
             and{" "}
             <a
               href="/legal/privacy"
-              className="font-semibold underline decoration-teal-300 underline-offset-4 hover:text-white"
+              className="focus-ring-on-dark inline-block py-1 font-semibold underline decoration-teal-300 underline-offset-4 hover:text-white"
             >
               privacy notice
             </a>{" "}
@@ -87,7 +87,7 @@ export function CookieBanner() {
         <button
           type="button"
           onClick={dismiss}
-          className="inline-flex shrink-0 items-center justify-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 transition-colors hover:bg-teal-100"
+          className="focus-ring-on-dark inline-flex shrink-0 items-center justify-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 transition-colors hover:bg-teal-100"
         >
           Got it
         </button>

@@ -71,7 +71,7 @@ export function HCPModal({ open, onClose }: Props) {
           outer overflow-y-auto provides natural scrolling so the top
           stays reachable. */}
       <div className="relative flex min-h-full items-center justify-center px-5 py-8 sm:py-12">
-        <div className="relative w-full max-w-md bg-white p-8 shadow-card ring-1 ring-teal-200">
+        <div className="relative w-full max-w-md bg-white p-8 shadow-card ring-1 ring-teal-300">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
             Self-declaration
           </p>
@@ -98,12 +98,12 @@ export function HCPModal({ open, onClose }: Props) {
               ref={declineRef}
               type="button"
               onClick={onClose}
-              className="inline-flex w-full items-center justify-center border border-teal-200 bg-white px-5 py-3 text-sm font-semibold text-teal-900 transition-colors hover:bg-teal-50"
+              className="inline-flex w-full items-center justify-center border border-teal-300 bg-white px-5 py-3 text-sm font-semibold text-teal-900 transition-colors hover:bg-teal-50"
             >
               No, take me back
             </button>
           </div>
-          <p className="mt-5 text-xs text-teal-900/60">
+          <p className="mt-5 text-xs text-teal-900/75">
             See our{" "}
             <a
               href="/legal/terms"

@@ -90,12 +90,12 @@ export function Science() {
                     className={`group relative flex w-full shrink-0 items-center gap-4 border-l-2 px-5 py-5 text-left transition-colors md:w-auto ${
                       isActive
                         ? "border-l-teal-700 bg-teal-50 text-teal-900"
-                        : "border-l-teal-100 text-teal-900/60 hover:border-l-teal-300 hover:bg-teal-50/50 hover:text-teal-900"
+                        : "border-l-teal-100 text-teal-900/75 hover:border-l-teal-300 hover:bg-teal-50/50 hover:text-teal-900"
                     }`}
                   >
                     <span
                       className={`text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
-                        isActive ? "text-teal-700" : "text-teal-700/50"
+                        isActive ? "text-teal-700" : "text-teal-800"
                       }`}
                     >
                       0{pillars.indexOf(p) + 1}
@@ -126,7 +126,7 @@ export function Science() {
               <p className="mt-5 text-base leading-relaxed text-teal-900/85 md:text-lg">
                 {current.body}
               </p>
-              <dl className="mt-8 grid gap-px overflow-hidden bg-teal-200/40 sm:grid-cols-3">
+              <dl className="mt-8 grid gap-px overflow-hidden bg-teal-300/40 sm:grid-cols-3">
                 {current.highlights.map((h) => (
                   <div
                     key={h.label}

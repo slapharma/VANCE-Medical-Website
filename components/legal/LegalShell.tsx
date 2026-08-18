@@ -20,7 +20,7 @@ export function LegalShell({ title, lastUpdated, intro, children }: Props) {
   return (
     <>
       <Header />
-      <main className="bg-white py-16 md:py-24">
+      <main id="main-content" className="bg-white py-16 md:py-24">
         <div className="container-x mx-auto max-w-3xl">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
             Legal
@@ -28,7 +28,7 @@ export function LegalShell({ title, lastUpdated, intro, children }: Props) {
           <h1 className="text-4xl font-bold tracking-tight text-teal-900 md:text-5xl">
             {title}
           </h1>
-          <p className="mt-3 text-sm text-teal-900/60">
+          <p className="mt-3 text-sm text-teal-900/75">
             Last updated: {lastUpdated}
           </p>
           {intro && (

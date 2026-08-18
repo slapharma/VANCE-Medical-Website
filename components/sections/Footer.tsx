@@ -26,7 +26,7 @@ export function Footer() {
             <Link
               href="/"
               aria-label="Vance Medical Foods — home"
-              className="-my-1 inline-block"
+              className="focus-ring -my-1 inline-block"
             >
               <Logo />
             </Link>
@@ -46,7 +46,7 @@ export function Footer() {
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className="transition-colors hover:text-teal-700"
+                    className="focus-ring inline-block py-1.5 transition-colors hover:text-teal-700"
                   >
                     {l.label}
                   </a>
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-teal-100 pt-6 md:flex-row md:items-center md:justify-between">
-          <div className="text-xs text-teal-900/65">
+          <div className="text-xs text-teal-900/80">
             <p>
               © {new Date().getFullYear()} Vance Medical Foods Ltd. All rights
               reserved.
@@ -81,7 +81,7 @@ export function Footer() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="text-teal-900/75 underline-offset-4 transition-colors hover:text-teal-700 hover:underline"
+                  className="focus-ring inline-block py-1.5 text-teal-900/75 underline-offset-4 transition-colors hover:text-teal-700 hover:underline"
                 >
                   {l.label}
                 </a>

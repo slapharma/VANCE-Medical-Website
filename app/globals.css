@@ -60,6 +60,19 @@ body {
    Read JSX cleanly; tweak visuals in one place.
    ========================================================================= */
 
+/* ----- Focus -----------------------------------------------------------
+   Author-defined focus rings. Previously the site defined none, so links and
+   buttons fell back to the UA default (Chrome's orange ring on a teal site)
+   and the form fields showed nothing at all — `outline-none` compiles to a
+   *transparent* 2px outline, leaving only a 1px border-colour change.
+   `focus-visible` keeps the ring off mouse clicks. */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-900 focus-visible:ring-offset-2;
+}
+.focus-ring-on-dark {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-900;
+}
+
 /* ----- Hero (homepage + HCP) -------------------------------------------- */
 .hero-section-base {
   @apply relative w-full overflow-hidden;
@@ -86,10 +99,10 @@ body {
   @apply mt-6 max-w-xl text-base leading-relaxed text-white/90 drop-shadow md:text-lg;
 }
 .hero-cta-primary {
-  @apply inline-flex items-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 shadow-card transition-colors hover:bg-teal-100;
+  @apply focus-ring-on-dark inline-flex items-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 shadow-card transition-colors hover:bg-teal-100;
 }
 .hero-cta-outline {
-  @apply inline-flex items-center border border-white/60 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20;
+  @apply focus-ring-on-dark inline-flex items-center border border-white/60 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20;
 }
 
 /* ----- Section scaffolding --------------------------------------------- */
@@ -100,7 +113,7 @@ body {
   @apply py-16 md:py-20;
 }
 .section-pretitle {
-  @apply mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700;
+  @apply mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-800;
 }
 .section-pretitle-on-dark {
   @apply mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-teal-300;
@@ -120,13 +133,13 @@ body {
 
 /* ----- Buttons / CTAs (on light backgrounds) --------------------------- */
 .cta-teal {
-  @apply inline-flex items-center bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900;
+  @apply focus-ring inline-flex items-center bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900;
 }
 .cta-teal-sm {
-  @apply inline-flex items-center bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900;
+  @apply focus-ring inline-flex items-center bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-teal-900;
 }
 .cta-link-arrow {
-  @apply inline-flex items-center text-sm font-semibold text-teal-700 transition-colors hover:text-teal-900;
+  @apply focus-ring inline-flex items-center py-2 text-sm font-semibold text-teal-700 transition-colors hover:text-teal-900;
 }
 
 /* ----- Pipeline / product cards --------------------------------------- */
@@ -141,13 +154,13 @@ body {
   @apply mb-4 flex flex-wrap items-baseline gap-2 text-xs font-semibold uppercase tracking-[0.14em];
 }
 .programme-pretitle-num {
-  @apply text-teal-700/70;
-}
-.programme-pretitle-status-soon {
   @apply text-teal-700;
 }
+.programme-pretitle-status-soon {
+  @apply text-teal-900;
+}
 .programme-pretitle-status-dev {
-  @apply text-teal-700/80;
+  @apply text-teal-800;
 }
 
 .card-lift {

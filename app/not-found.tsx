@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main className="relative flex min-h-[70vh] items-center justify-center bg-teal-50 px-5 py-20">
+      <main id="main-content" className="relative flex min-h-[70vh] items-center justify-center bg-teal-50 px-5 py-20">
         <div
           aria-hidden
           className="absolute inset-0 opacity-[0.18]"

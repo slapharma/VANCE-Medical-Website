@@ -45,7 +45,7 @@ function Fact({ title, body }: { title: string; body: string }) {
         className="absolute left-5 top-0 block h-0.5 w-8 bg-teal-700 transition-[width] duration-300 group-hover:w-16"
       />
       <dt className="text-lg font-bold tracking-tight text-teal-900">{title}</dt>
-      <dd className="mt-1 text-xs font-medium uppercase tracking-wider text-teal-700/80">
+      <dd className="mt-1 text-xs font-medium uppercase tracking-wider text-teal-800">
         {body}
       </dd>
     </div>

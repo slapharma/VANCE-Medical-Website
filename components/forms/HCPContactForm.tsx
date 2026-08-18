@@ -116,7 +116,7 @@ export function HCPContactForm() {
         We use your details only to reply to your enquiry. See our{" "}
         <a
           href="/legal/privacy"
-          className="underline decoration-teal-300 underline-offset-4 hover:text-white"
+          className="focus-ring-on-dark inline-block py-1 underline decoration-teal-300 underline-offset-4 hover:text-white"
         >
           privacy notice
         </a>
@@ -151,7 +151,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="inline-flex items-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 shadow-card transition-colors hover:bg-teal-100 disabled:cursor-progress disabled:opacity-60"
+      className="focus-ring-on-dark inline-flex items-center bg-white px-6 py-3 text-sm font-semibold text-teal-900 shadow-card transition-colors hover:bg-teal-100 disabled:cursor-progress disabled:opacity-60"
     >
       {pending ? "Sending…" : "Send enquiry"}
       {!pending && (
@@ -182,7 +182,7 @@ function Field({
       >
         {label}
         {required && (
-          <span aria-hidden className="ml-1 text-teal-300/70">
+          <span aria-hidden className="ml-1 text-teal-300">
             *
           </span>
         )}
@@ -193,4 +193,4 @@ function Field({
 }
 
 const inputClass =
-  "w-full border border-white/15 bg-white/5 px-4 py-3 text-base text-white placeholder:text-teal-100/50 outline-none ring-0 transition-colors focus:border-teal-300 focus:bg-white/10";
+  "focus-ring-on-dark w-full border border-white/15 bg-white/5 px-4 py-3 text-base text-white placeholder:text-teal-100/70 transition-colors focus:border-teal-300 focus:bg-white/10";

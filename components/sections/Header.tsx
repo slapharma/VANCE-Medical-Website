@@ -76,7 +76,7 @@ export function Header() {
             href="/"
             aria-label="Vance Medical Foods — home"
             onClick={handleLogoClick}
-            className="-my-1 block"
+            className="focus-ring -my-1 block"
           >
             <Logo />
           </Link>
@@ -88,7 +88,7 @@ export function Header() {
                 <li key={n.href}>
                   <a
                     href={n.href}
-                    className="transition-colors hover:text-teal-700"
+                    className="focus-ring inline-block py-2 transition-colors hover:text-teal-700"
                   >
                     {n.label}
                   </a>
@@ -104,7 +104,7 @@ export function Header() {
             aria-label="Open menu"
             aria-controls="mobile-menu"
             aria-expanded={open}
-            className="-mr-2 inline-flex h-12 w-12 items-center justify-center text-teal-900 transition-colors hover:text-teal-700 md:hidden"
+            className="focus-ring -mr-2 inline-flex h-12 w-12 items-center justify-center text-teal-900 transition-colors hover:text-teal-700 md:hidden"
           >
             <HamburgerIcon />
           </button>
@@ -118,10 +118,10 @@ export function Header() {
         aria-modal="true"
         aria-label="Site menu"
         aria-hidden={!open}
-        className={`fixed inset-0 z-50 bg-white transition-[opacity,transform] duration-300 ease-out md:hidden ${
+        className={`fixed inset-0 z-50 bg-white transition-[opacity,transform,visibility] duration-300 ease-out md:hidden ${
           open
-            ? "translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-2 opacity-0"
+            ? "visible translate-y-0 opacity-100"
+            : "invisible pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
         <div className="container-x flex h-20 items-center justify-between border-b border-teal-100">
@@ -133,7 +133,7 @@ export function Header() {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Close menu"
-            className="-mr-2 inline-flex h-12 w-12 items-center justify-center text-teal-900 transition-colors hover:text-teal-700"
+            className="focus-ring -mr-2 inline-flex h-12 w-12 items-center justify-center text-teal-900 transition-colors hover:text-teal-700"
           >
             <CloseIcon />
           </button>
@@ -146,7 +146,7 @@ export function Header() {
                 <a
                   href={n.href}
                   onClick={() => setOpen(false)}
-                  className="flex items-center justify-between border-b border-teal-100 py-5 text-2xl font-semibold text-teal-900 transition-colors hover:text-teal-700"
+                  className="focus-ring flex items-center justify-between border-b border-teal-100 py-5 text-2xl font-semibold text-teal-900 transition-colors hover:text-teal-700"
                 >
                   {n.label}
                   <span aria-hidden className="text-teal-700">

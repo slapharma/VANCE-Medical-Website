@@ -36,12 +36,12 @@ export function NewsletterForm() {
           maxLength={200}
           placeholder="you@example.com"
           autoComplete="email"
-          className="min-w-0 flex-1 border border-teal-200 bg-white px-4 py-3 text-sm text-teal-900 placeholder:text-teal-700/40 outline-none transition-colors focus:border-teal-700"
+          className="focus-ring min-w-0 flex-1 border border-teal-300 bg-white px-4 py-3 text-sm text-teal-900 placeholder:text-teal-700 transition-colors focus:border-teal-700"
         />
         <Submit />
       </div>
 
-      <p className="text-xs text-teal-900/60">
+      <p className="text-xs text-teal-900/75">
         Occasional updates on our pipeline and gastrointestinal nutrition
         evidence. Unsubscribe at any time.
       </p>
@@ -72,7 +72,7 @@ function Submit() {
     <button
       type="submit"
       disabled={pending}
-      className="inline-flex items-center bg-teal-700 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-900 disabled:cursor-progress disabled:opacity-60"
+      className="focus-ring inline-flex items-center bg-teal-700 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-900 disabled:cursor-progress disabled:opacity-60"
     >
       {pending ? "…" : "Subscribe"}
     </button>
