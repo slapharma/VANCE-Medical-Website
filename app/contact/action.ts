@@ -6,6 +6,8 @@ import {
   getFromAddress,
   getMailer,
 } from "@/lib/mailer";
+import { consume } from "@/lib/rate-limit";
+import { clientIp } from "@/lib/request-ip";
 
 /**
  * submitContact — server action for the home-page contact form.
@@ -38,6 +40,13 @@ const ROLE_LABEL: Record<Role, string> = {
 const SUCCESS_MESSAGE =
   "Your contact request has been received, a member of our team will contact you shortly.";
 
+// Rate limit: applied after the honeypot (so trapped bots never consume budget)
+// but before validation, so a flood of malformed submissions is rejected cheaply
+// rather than being parsed. Generous enough that a human correcting mistakes
+// will not trip it.
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
 export async function submitContact(
   _prev: ContactSubmitState,
   formData: FormData
@@ -46,6 +55,14 @@ export async function submitContact(
   if (formData.get("website")) {
     // Silent success to avoid confirming the trap exists.
     return { status: "success", message: SUCCESS_MESSAGE };
+  }
+
+  const limit = consume(`contact:${clientIp()}`, RATE_LIMIT, RATE_WINDOW_MS);
+  if (!limit.ok) {
+    return {
+      status: "error",
+      message: `Too many messages sent from this connection. Please try again in ${Math.ceil(limit.retryAfterSec / 60)} minute(s).`,
+    };
   }
 
   const name = String(formData.get("name") ?? "").trim();

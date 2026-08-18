@@ -6,6 +6,8 @@ import {
   getMailer,
   getNewsletterTo,
 } from "@/lib/mailer";
+import { consume } from "@/lib/rate-limit";
+import { clientIp } from "@/lib/request-ip";
 
 /**
  * subscribeNewsletter — server action for the footer newsletter form.
@@ -33,6 +35,13 @@ export type NewsletterState =
 
 const SUCCESS_MESSAGE = "Thanks. You're on the list.";
 
+// Rate limit: applied after the honeypot (so trapped bots never consume budget)
+// but before validation, so a flood of malformed submissions is rejected cheaply
+// rather than being parsed. Generous enough that a human correcting mistakes
+// will not trip it.
+const RATE_LIMIT = 3;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
 export async function subscribeNewsletter(
   _prev: NewsletterState,
   formData: FormData
@@ -40,6 +49,14 @@ export async function subscribeNewsletter(
   // Honeypot
   if (formData.get("nl_url")) {
     return { status: "success", message: SUCCESS_MESSAGE };
+  }
+
+  const limit = consume(`newsletter:${clientIp()}`, RATE_LIMIT, RATE_WINDOW_MS);
+  if (!limit.ok) {
+    return {
+      status: "error",
+      message: `Too many sign-up attempts from this connection. Please try again in ${Math.ceil(limit.retryAfterSec / 60)} minute(s).`,
+    };
   }
 
   const email = String(formData.get("email") ?? "").trim();

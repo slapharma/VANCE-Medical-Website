@@ -6,6 +6,8 @@ import {
   getFromAddress,
   getMailer,
 } from "@/lib/mailer";
+import { consume } from "@/lib/rate-limit";
+import { clientIp } from "@/lib/request-ip";
 
 /**
  * submitHCPInfo — server action for the healthcare-professionals contact form.
@@ -34,12 +36,27 @@ const PRODUCT_LABEL: Record<Product, string> = {
 const SUCCESS_MESSAGE =
   "Your contact request has been received, a member of our team will contact you shortly.";
 
+// Rate limit: applied after the honeypot (so trapped bots never consume budget)
+// but before validation, so a flood of malformed submissions is rejected cheaply
+// rather than being parsed. Generous enough that a human correcting mistakes
+// will not trip it.
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
 export async function submitHCPInfo(
   _prev: HCPSubmitState,
   formData: FormData
 ): Promise<HCPSubmitState> {
   if (formData.get("website")) {
     return { status: "success", message: SUCCESS_MESSAGE };
+  }
+
+  const limit = consume(`hcp:${clientIp()}`, RATE_LIMIT, RATE_WINDOW_MS);
+  if (!limit.ok) {
+    return {
+      status: "error",
+      message: `Too many enquiries sent from this connection. Please try again in ${Math.ceil(limit.retryAfterSec / 60)} minute(s).`,
+    };
   }
 
   const name = String(formData.get("name") ?? "").trim();
