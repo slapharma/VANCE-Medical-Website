@@ -19,7 +19,7 @@ export default function HCPPage() {
   return (
     <>
       <Header />
-      <main className="bg-white">
+      <main id="main-content" className="bg-white">
         {/* Hero — photographic, mirrors components/sections/Hero.tsx structure
             with a stronger overlay so this page reads as a calmer, more
             clinical destination than the home page. */}
@@ -138,7 +138,7 @@ export default function HCPPage() {
               </div>
             </div>
 
-            <p className="mt-8 text-sm text-teal-900/70">
+            <p className="mt-8 text-sm text-teal-900/80">
               Detailed prescribing information, formulation specifications and
               clinical evidence summaries will be published here as products
               become available.
@@ -150,7 +150,7 @@ export default function HCPPage() {
         <section id="join-us" className="bg-teal-50 py-20 md:py-28">
           <div className="container-x">
             <Reveal className="max-w-3xl">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-800">
                 Collaborate with us
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
@@ -173,7 +173,7 @@ export default function HCPPage() {
                   <div className="mb-5 flex h-12 w-12 items-center justify-center border border-teal-300 bg-white text-teal-700 transition-colors group-hover:border-teal-700">
                     <div className="h-6 w-6">{p.icon}</div>
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-800">
                     {p.label}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-teal-900/80">
@@ -191,7 +191,7 @@ export default function HCPPage() {
                 Get in touch with our medical team
                 <span aria-hidden className="ml-2">→</span>
               </a>
-              <span className="text-sm text-teal-900/70">
+              <span className="text-sm text-teal-900/80">
                 Your contact request will be received, a member of our team
                 will contact you shortly.
               </span>
@@ -203,7 +203,7 @@ export default function HCPPage() {
         <section id="vancehealthhub-collab" className="bg-white py-20 md:py-28">
           <div className="container-x grid items-start gap-12 md:grid-cols-12">
             <Reveal className="md:col-span-6">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-teal-800">
                 Community partnership
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-teal-900 md:text-4xl">
@@ -224,7 +224,7 @@ export default function HCPPage() {
                 for them.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-teal-900/80">
-                We're always looking for healthcare professionals to help shape
+                We&apos;re always looking for healthcare professionals to help shape
                 the content and engage with the community.
               </p>
 
@@ -254,7 +254,7 @@ export default function HCPPage() {
                     key={c.label}
                     className="card-lift bg-teal-50 p-6 ring-1 ring-teal-100"
                   >
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-800">
                       {c.label}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-teal-900/80">
@@ -352,7 +352,7 @@ export default function HCPPage() {
               specific conditions and are intended for use under medical
               supervision.
             </p>
-            <p className="mt-4 text-sm text-teal-900/70">
+            <p className="mt-4 text-sm text-teal-900/80">
               This page does not constitute promotion of a medicinal product.
               Information is provided to support clinical decision-making by
               UK healthcare professionals. Materials referencing prescribing

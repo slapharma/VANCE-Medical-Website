@@ -1,9 +1,9 @@
-name: Lighthouse CI
+name: CI
 
-# Runs Lighthouse against a freshly-built local server on every PR and on
-# pushes to main. Reports surface as a check with link to the run; the action
-# also uploads HTML reports to temporary public storage and (when run on a PR)
-# leaves a summary comment with the scores.
+# Static checks plus Lighthouse against a freshly-built local server, on every PR
+# and on pushes to main. Lighthouse runs at BOTH form factors: the mobile drawer
+# is `display:none` above md, so mobile-only a11y violations are invisible to a
+# desktop-only run.
 
 on:
   pull_request:
@@ -16,14 +16,37 @@ permissions:
   pull-requests: write
 
 jobs:
+  static:
+    name: Lint & typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Typecheck
+        run: npx tsc --noEmit
+      - name: Lint
+        run: npm run lint
+
   lighthouse:
+    name: Lighthouse (${{ matrix.preset }})
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: [desktop, mobile]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
@@ -42,6 +65,6 @@ jobs:
             http://localhost:3000/healthcare-professionals
             http://localhost:3000/legal/privacy
             http://localhost:3000/legal/terms
-          configPath: ./lighthouserc.json
+          configPath: ./lighthouserc.${{ matrix.preset }}.json
           uploadArtifacts: true
           temporaryPublicStorage: true

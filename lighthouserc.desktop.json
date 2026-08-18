@@ -5,9 +5,7 @@
       "startServerReadyPattern": "Ready",
       "startServerReadyTimeout": 60000,
       "numberOfRuns": 2,
-      "settings": {
-        "preset": "desktop"
-      }
+      "settings": { "preset": "desktop" }
     },
     "assert": {
       "assertions": {
@@ -17,8 +15,6 @@
         "categories:seo": ["error", { "minScore": 0.9 }]
       }
     },
-    "upload": {
-      "target": "temporary-public-storage"
-    }
+    "upload": { "target": "temporary-public-storage" }
   }
 }
